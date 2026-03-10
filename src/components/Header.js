@@ -1,224 +1,127 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { useState } from 'react';
+import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import Image from "next/image";
+import { Syne } from "next/font/google";
+import { FiMenu, FiX } from "react-icons/fi";
 
-export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
+const syne = Syne({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+export default function Navbar() {
+  const pathname = usePathname();
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const navLinks = [
+    { name: "Home", href: "/" },
+    { name: "Projects", href: "/projects" },
+    { name: "About", href: "/about" },
+    { name: "Services", href: "/services" },
+  ];
 
   return (
-    <header className="bg-white shadow-md dark:bg-gray-800">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <div className="flex items-center">
-            <Link href="/" className="text-2xl font-bold text-gray-900 dark:text-white">
-              MyWebsite
+    <div className="w-full flex justify-center sticky top-0 z-50 pt-4 sm:pt-6 px-4">
+      <div className="w-full max-w-7xl flex items-center justify-between px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-[rgba(17,16,16,0.20)] border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.6)] relative overflow-hidden">
+        {/* Glass shine */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent opacity-30 pointer-events-none rounded-full" />
+
+        {/* Logo */}
+        <div className="relative z-10">
+          <Image
+            src="/logo.png"
+            alt="logo"
+            width={160}
+            height={160}
+            className="w-[120px] sm:w-[150px] md:w-[180px]"
+          />
+        </div>
+
+        {/* Desktop Menu */}
+        <div className="hidden md:flex items-center gap-8 relative z-10">
+          <div
+            className={`flex items-center gap-8 text-md ${syne.className}`}
+            style={{ color: "#cfcfcf" }}
+          >
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={`pb-1 transition ${
+                  pathname === link.href
+                    ? "border-b-2 text-[#ED8301]"
+                    : "hover:text-white"
+                }`}
+                style={pathname === link.href ? { borderColor: "#ED8301" } : {}}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
+
+          {/* CTA Button */}
+          <Link href="/contact">
+            <button
+              className={`text-black font-semibold text-lg shadow-lg hover:scale-105 transition ${syne.className}`}
+              style={{
+                background: "linear-gradient(90deg, #FE9A00 0%, #E17100 100%)",
+                borderRadius: "30px",
+                padding: "6px 30px",
+              }}
+            >
+              Let's Talk
+            </button>
+          </Link>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <div
+          className="md:hidden text-white text-2xl relative z-10 cursor-pointer"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? <FiX /> : <FiMenu />}
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="absolute top-20 w-[90%] max-w-7xl bg-[#111010]/95 backdrop-blur-xl border border-white/10 rounded-2xl p-6 md:hidden">
+          <div className={`flex flex-col gap-6 ${syne.className}`}>
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                className={`transition ${
+                  pathname === link.href
+                    ? "text-[#ED8301]"
+                    : "text-gray-300 hover:text-white"
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+
+            {/* Mobile CTA */}
+            <Link href="/contact">
+              <button
+                className="text-black font-semibold mt-2"
+                style={{
+                  background:
+                    "linear-gradient(90deg, #FE9A00 0%, #E17100 100%)",
+                  borderRadius: "30px",
+                  padding: "10px 25px",
+                }}
+              >
+                Let's Talk
+              </button>
             </Link>
           </div>
-          
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
-              <Link 
-                href="/" 
-                className="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium dark:text-white dark:hover:text-blue-400"
-              >
-                Home
-              </Link>
-              <Link 
-                href="/about" 
-                className="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium dark:text-white dark:hover:text-blue-400"
-              >
-                About
-              </Link>
-              
-              {/* Services Dropdown */}
-              <div className="relative">
-                <button
-                  onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
-                  className="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium dark:text-white dark:hover:text-blue-400 flex items-center"
-                >
-                  Services
-                  <svg 
-                    className={`ml-1 h-4 w-4 transition-transform ${isServicesDropdownOpen ? 'rotate-180' : ''}`} 
-                    fill="none" 
-                    viewBox="0 0 24 24" 
-                    stroke="currentColor"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                
-                {isServicesDropdownOpen && (
-                  <div className="absolute top-full left-0 mt-1 w-64 bg-white dark:bg-gray-800 rounded-md shadow-lg border border-gray-200 dark:border-gray-700 z-50">
-                    <div className="py-1">
-                      <Link 
-                        href="/services/creative-production" 
-                        className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
-                        onClick={() => setIsServicesDropdownOpen(false)}
-                      >
-                        Creative Production
-                      </Link>
-                      <Link 
-                        href="/services/branding-design" 
-                        className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
-                        onClick={() => setIsServicesDropdownOpen(false)}
-                      >
-                        Branding & Design
-                      </Link>
-                      <Link 
-                        href="/services/performance-marketing" 
-                        className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
-                        onClick={() => setIsServicesDropdownOpen(false)}
-                      >
-                        Performance Marketing
-                      </Link>
-                      <Link 
-                        href="/services/digital-marketing" 
-                        className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
-                        onClick={() => setIsServicesDropdownOpen(false)}
-                      >
-                        Digital Marketing
-                      </Link>
-                      <Link 
-                        href="/services/conversion-funnel" 
-                        className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
-                        onClick={() => setIsServicesDropdownOpen(false)}
-                      >
-                        Conversion & Funnel Optimization
-                      </Link>
-                    </div>
-                  </div>
-                )}
-              </div>
-              
-              <Link 
-                href="/contact" 
-                className="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium dark:text-white dark:hover:text-blue-400"
-              >
-                Contact
-              </Link>
-            </div>
-          </div>
-          
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-900 hover:text-blue-600 dark:text-white dark:hover:text-blue-400 focus:outline-none"
-            >
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                {isMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
-            </button>
-          </div>
         </div>
-        
-        {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              <Link 
-                href="/" 
-                className="text-gray-900 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium dark:text-white dark:hover:text-blue-400"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Home
-              </Link>
-              <Link 
-                href="/about" 
-                className="text-gray-900 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium dark:text-white dark:hover:text-blue-400"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                About
-              </Link>
-              
-              {/* Mobile Services Dropdown */}
-              <div>
-                <button
-                  onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
-                  className="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-base font-medium dark:text-white dark:hover:text-blue-400 flex items-center justify-between w-full"
-                >
-                  Services
-                  <svg 
-                    className={`ml-1 h-4 w-4 transition-transform ${isServicesDropdownOpen ? 'rotate-180' : ''}`} 
-                    fill="none" 
-                    viewBox="0 0 24 24" 
-                    stroke="currentColor"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                
-                {isServicesDropdownOpen && (
-                  <div className="mt-1 ml-4 space-y-1">
-                    <Link 
-                      href="/services/creative-production" 
-                      className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
-                      onClick={() => {
-                        setIsMenuOpen(false);
-                        setIsServicesDropdownOpen(false);
-                      }}
-                    >
-                      Creative Production
-                    </Link>
-                    <Link 
-                      href="/services/branding-design" 
-                      className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
-                      onClick={() => {
-                        setIsMenuOpen(false);
-                        setIsServicesDropdownOpen(false);
-                      }}
-                    >
-                      Branding & Design
-                    </Link>
-                    <Link 
-                      href="/services/performance-marketing" 
-                      className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
-                      onClick={() => {
-                        setIsMenuOpen(false);
-                        setIsServicesDropdownOpen(false);
-                      }}
-                    >
-                      Performance Marketing
-                    </Link>
-                    <Link 
-                      href="/services/digital-marketing" 
-                      className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
-                      onClick={() => {
-                        setIsMenuOpen(false);
-                        setIsServicesDropdownOpen(false);
-                      }}
-                    >
-                      Digital Marketing
-                    </Link>
-                    <Link 
-                      href="/services/conversion-funnel" 
-                      className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
-                      onClick={() => {
-                        setIsMenuOpen(false);
-                        setIsServicesDropdownOpen(false);
-                      }}
-                    >
-                      Conversion & Funnel Optimization
-                    </Link>
-                  </div>
-                )}
-              </div>
-              
-              <Link 
-                href="/contact" 
-                className="text-gray-900 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium dark:text-white dark:hover:text-blue-400"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Contact
-              </Link>
-            </div>
-          </div>
-        )}
-      </nav>
-    </header>
+      )}
+    </div>
   );
 }
