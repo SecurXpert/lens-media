@@ -5,7 +5,7 @@ export default function ContactCards() {
     <section className="py-20 px-6 text-center">
       <h2
         className="font-[Azonix]
-          font-bold
+          font-semibold
           text-[30px]
           sm:text-[35px]
           md:text-[45px]
@@ -18,7 +18,7 @@ export default function ContactCards() {
           text-transparent
           mb-10"
       >
-        REACH US <span>DIRECTLY</span>
+        REACH US <span>DIRECTLy</span>
       </h2>
 
       <div className="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
