@@ -1,8 +1,21 @@
 @import "tailwindcss";
 
+* {
+  
+ 
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #000000;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #ffffff;
 }
 
 @theme inline {
@@ -19,17 +32,127 @@
   }
 }
 
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 @font-face {
   font-family: "Azonix";
   src: url("/fonts/Azonix.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
-@font-face {
-  font-family: "Font3";
-  src: url("/fonts/font3.woff2");
+
+/* Global padding for content sections - OPT-IN with .content-section class */
+/* Full-width/fullscreen sections: add .full-bleed class to override */
+.content-section {
+  padding: 4rem 1.5rem !important;
+  margin-bottom: 2rem !important;
 }
- 
+
+.full-bleed {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin: 0 !important;
+}
+
+main {
+  /* max-width: 1400px; */
+  margin: 0;
+
+}
+
+@media (min-width: 640px) {
+  .content-section {
+    padding: 5rem 2.5rem !important;
+  }
+  main {
+    padding: 0rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .content-section {
+    padding: 6rem 3rem !important;
+  }
+  main {
+    padding: 0rem;
+  }
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.5%);
+  }
+}
+
+.animate-scroll {
+  animation: scrollLeft 8s linear infinite;
+  will-change: transform;
+}
+
+.service-card {
+  width: 210px;
+  height: 360px;
+  position: relative;
+  overflow: hidden;
+
+  clip-path: path(
+    "M26.9565 65.8697C79.1947 39.9276 131.815 26.9565 184.829 26.9565C237.843 26.9565 291.239 39.9276 345.017 65.8697C345.017 230.108 345.017 394.359 345.017 558.598C289.7 543.101 235.528 535.365 182.513 535.365C129.512 535.365 77.6553 543.101 26.9565 558.598C26.9565 394.359 26.9565 230.108 26.9565 65.8697Z"
+  );
+
+  border: 2px solid #ff8c00;
+
+  box-shadow:
+    0 0 25px #ff8c00,
+    0 0 60px rgba(255, 140, 0, 0.6),
+    inset 0 0 25px rgba(255, 140, 0, 0.4);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.service-card:hover {
+  transform: translateY(-10px) scale(1.05);
+
+  box-shadow:
+    0 0 40px #ff8c00,
+    0 0 80px rgba(255, 140, 0, 0.9),
+    inset 0 0 30px rgba(255, 140, 0, 0.6);
+}
+
+.service-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.3),
+    transparent
+  );
+}
+
+.service-text {
+  position: absolute;
+  bottom: 28px;
+  width: 100%;
+  text-align: center;
+
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);

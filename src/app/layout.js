@@ -4,8 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { HiOutlinePlus, HiOutlineLightBulb } from "react-icons/hi";
 
-
-<link href="https://fonts.cdnfonts.com/css/azonix" rel="stylesheet"></link>
+<link href="https://fonts.cdnfonts.com/css/azonix" rel="stylesheet"></link>;
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -28,9 +27,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
         <Header />
-        <main className="flex-grow">
-          {children}
-        </main>
+        <main className="flex-grow">{children}</main>
         <Footer />
       </body>
     </html>

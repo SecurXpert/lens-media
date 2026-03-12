@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { Syne } from "next/font/google";
-import { FiMenu, FiX } from "react-icons/fi";
+import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 
 const syne = Syne({
   subsets: ["latin"],
@@ -15,17 +15,26 @@ const syne = Syne({
 export default function Navbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Projects", href: "/projects" },
+    { name: "Projects", href: "/Projects" },
     { name: "About", href: "/about" },
-    { name: "Services", href: "/services" },
+    { name: "Services", href: "/services", hasDropdown: true },
+  ];
+
+  const services = [
+    { name: "Creative Production", href: "/services/creative-production" },
+    { name: "Branding & Design", href: "/services/branding-design" },
+    { name: "Performance Marketing", href: "/services/performance-marketing" },
+    { name: "Digital Marketing", href: "/services/digital-marketing" },
+    { name: "Conversion & Funnel", href: "/services/conversion-funnel" },
   ];
 
   return (
     <div className="w-full flex justify-center sticky top-0 z-50 pt-4 sm:pt-6 px-4">
-      <div className="w-full max-w-7xl flex items-center justify-between px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-[rgba(17,16,16,0.20)] border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.6)] relative overflow-hidden">
+      <div className="w-full max-w-7xl flex items-center justify-between px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-[rgba(17,16,16,0.20)] border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.6)] relative">
         {/* Glass shine */}
         <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent opacity-30 pointer-events-none rounded-full" />
 
@@ -47,18 +56,88 @@ export default function Navbar() {
             style={{ color: "#cfcfcf" }}
           >
             {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className={`pb-1 transition ${
-                  pathname === link.href
-                    ? "border-b-2 text-[#ED8301]"
-                    : "hover:text-white"
-                }`}
-                style={pathname === link.href ? { borderColor: "#ED8301" } : {}}
-              >
-                {link.name}
-              </Link>
+              <div key={link.name} className="relative">
+                {link.hasDropdown ? (
+                  <div>
+                    {pathname.startsWith("/services") ? (
+                      <>
+                        <button
+                          onClick={() =>
+                            setServicesDropdownOpen(!servicesDropdownOpen)
+                          }
+                          className={` transition flex items-center gap-1 ${
+                            pathname.startsWith("/services")
+                              ? "border-b-2 text-[#ED8301]"
+                              : "hover:text-white"
+                          }`}
+                          style={
+                            pathname.startsWith("/services")
+                              ? { borderColor: "#ED8301" }
+                              : {}
+                          }
+                        >
+                          {link.name}
+                          <FiChevronDown
+                            className={`transition-transform ${
+                              servicesDropdownOpen ? "rotate-180" : ""
+                            }`}
+                            size={14}
+                          />
+                        </button>
+
+                        {servicesDropdownOpen && (
+                          <div className="absolute top-full left-0 mt-2 w-64 bg-[#111010]/95 backdrop-blur-xl border border-white/10 rounded-lg shadow-lg z-50">
+                            {services.map((service) => (
+                              <Link
+                                key={service.href}
+                                href={service.href}
+                                onClick={() => setServicesDropdownOpen(false)}
+                                className={`block px-4 py-3 text-sm transition ${
+                                  pathname === service.href
+                                    ? "text-[#ED8301] bg-white/5"
+                                    : "text-gray-300 hover:text-white hover:bg-white/10"
+                                }`}
+                              >
+                                {service.name}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        className={`pb-1 transition ${
+                          pathname === link.href
+                            ? "border-b-2 text-[#ED8301]"
+                            : "hover:text-white"
+                        }`}
+                        style={
+                          pathname === link.href
+                            ? { borderColor: "#ED8301" }
+                            : {}
+                        }
+                      >
+                        {link.name}
+                      </Link>
+                    )}
+                  </div>
+                ) : (
+                  <Link
+                    href={link.href}
+                    className={`pb-1 transition ${
+                      pathname === link.href
+                        ? "border-b-2 text-[#ED8301]"
+                        : "hover:text-white"
+                    }`}
+                    style={
+                      pathname === link.href ? { borderColor: "#ED8301" } : {}
+                    }
+                  >
+                    {link.name}
+                  </Link>
+                )}
+              </div>
             ))}
           </div>
 
@@ -91,18 +170,80 @@ export default function Navbar() {
         <div className="absolute top-20 w-[90%] max-w-7xl bg-[#111010]/95 backdrop-blur-xl border border-white/10 rounded-2xl p-6 md:hidden">
           <div className={`flex flex-col gap-6 ${syne.className}`}>
             {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                onClick={() => setMenuOpen(false)}
-                className={`transition ${
-                  pathname === link.href
-                    ? "text-[#ED8301]"
-                    : "text-gray-300 hover:text-white"
-                }`}
-              >
-                {link.name}
-              </Link>
+              <div key={link.name}>
+                {link.hasDropdown ? (
+                  <div>
+                    {pathname.startsWith("/services") ? (
+                      <>
+                        <button
+                          onClick={() =>
+                            setServicesDropdownOpen(!servicesDropdownOpen)
+                          }
+                          className={`transition flex items-center justify-between w-full ${
+                            pathname.startsWith("/services")
+                              ? "text-[#ED8301]"
+                              : "text-gray-300 hover:text-white"
+                          }`}
+                        >
+                          {link.name}
+                          <FiChevronDown
+                            className={`transition-transform ${
+                              servicesDropdownOpen ? "rotate-180" : ""
+                            }`}
+                            size={14}
+                          />
+                        </button>
+
+                        {servicesDropdownOpen && (
+                          <div className="mt-2 ml-4 space-y-2">
+                            {services.map((service) => (
+                              <Link
+                                key={service.href}
+                                href={service.href}
+                                onClick={() => {
+                                  setMenuOpen(false);
+                                  setServicesDropdownOpen(false);
+                                }}
+                                className={`block py-2 text-sm transition ${
+                                  pathname === service.href
+                                    ? "text-[#ED8301]"
+                                    : "text-gray-400 hover:text-white"
+                                }`}
+                              >
+                                {service.name}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        onClick={() => setMenuOpen(false)}
+                        className={`transition ${
+                          pathname === link.href
+                            ? "text-[#ED8301]"
+                            : "text-gray-300 hover:text-white"
+                        }`}
+                      >
+                        {link.name}
+                      </Link>
+                    )}
+                  </div>
+                ) : (
+                  <Link
+                    href={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    className={`transition ${
+                      pathname === link.href
+                        ? "text-[#ED8301]"
+                        : "text-gray-300 hover:text-white"
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                )}
+              </div>
             ))}
 
             {/* Mobile CTA */}
