@@ -16,10 +16,11 @@ export default function Navbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+  const [projectsDropdownOpen, setProjectsDropdownOpen] = useState(false);
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Projects", href: "/Projects" },
+    { name: "Projects", href: "/Projects", hasDropdown: true },
     { name: "About", href: "/about" },
     { name: "Services", href: "/services", hasDropdown: true },
   ];
@@ -30,6 +31,15 @@ export default function Navbar() {
     { name: "Performance Marketing", href: "/services/performance-marketing" },
     { name: "Digital Marketing", href: "/services/digital-marketing" },
     { name: "Conversion & Funnel", href: "/services/conversion-funnel" },
+  ];
+
+  const projects = [
+    { name: "Veloura Studio", href: "/Projects/veloura" },
+    { name: "Hyndav", href: "/Projects/hyndav" },
+    { name: "Manyavar", href: "/Projects/manyavar" },
+    { name: "Shoot", href: "/Projects/shoot" },
+    { name: "Pure", href: "/Projects/pure" },
+    { name: "Aroma", href: "/Projects/aroma" },
   ];
 
   return (
@@ -59,7 +69,57 @@ export default function Navbar() {
               <div key={link.name} className="relative">
                 {link.hasDropdown ? (
                   <div>
-                    {pathname.startsWith("/services") ? (
+                    {link.name === "Projects" ? (
+                      <>
+                        {pathname.startsWith("/Projects") ? (
+                          <button
+                            onClick={() =>
+                              setProjectsDropdownOpen(!projectsDropdownOpen)
+                            }
+                            className={`transition flex items-center gap-1 ${
+                              pathname.startsWith("/Projects")
+                                ? "border-b-2 text-[#ED8301]"
+                                : "hover:text-white"
+                            }`}
+                            style={{ borderColor: "#ED8301" }}
+                          >
+                            {link.name}
+                            <FiChevronDown
+                              className={`transition-transform ${
+                                projectsDropdownOpen ? "rotate-180" : ""
+                              }`}
+                              size={14}
+                            />
+                          </button>
+                        ) : (
+                          <Link
+                            href="/Projects"
+                            className="hover:text-white flex items-center gap-1"
+                          >
+                            {link.name}
+                          </Link>
+                        )}
+
+                        {projectsDropdownOpen && (
+                          <div className="absolute top-full left-0 mt-2 w-64 bg-[#111010]/95 backdrop-blur-xl border border-white/10 rounded-lg shadow-lg z-50">
+                            {projects.map((project) => (
+                              <Link
+                                key={project.href}
+                                href={project.href}
+                                onClick={() => setProjectsDropdownOpen(false)}
+                                className={`block px-4 py-3 text-sm transition ${
+                                  pathname === project.href
+                                    ? "text-[#ED8301] bg-white/5"
+                                    : "text-gray-300 hover:text-white hover:bg-white/10"
+                                }`}
+                              >
+                                {project.name}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </>
+                    ) : pathname.startsWith("/services") ? (
                       <>
                         <button
                           onClick={() =>
@@ -173,7 +233,56 @@ export default function Navbar() {
               <div key={link.name}>
                 {link.hasDropdown ? (
                   <div>
-                    {pathname.startsWith("/services") ? (
+                    {link.name === "Projects" ? (
+                      <>
+                        {pathname.startsWith("/projects") ? (
+                          <button
+                            onClick={() =>
+                              setProjectsDropdownOpen(!projectsDropdownOpen)
+                            }
+                            className="flex items-center justify-between w-full text-[#ED8301]"
+                          >
+                            {link.name}
+                            <FiChevronDown
+                              className={`transition-transform ${
+                                projectsDropdownOpen ? "rotate-180" : ""
+                              }`}
+                              size={14}
+                            />
+                          </button>
+                        ) : (
+                          <Link
+                            href="/projects"
+                            onClick={() => setMenuOpen(false)}
+                            className="text-gray-300 hover:text-white"
+                          >
+                            {link.name}
+                          </Link>
+                        )}
+
+                        {projectsDropdownOpen && (
+                          <div className="mt-2 ml-4 space-y-2">
+                            {projects.map((project) => (
+                              <Link
+                                key={project.href}
+                                href={project.href}
+                                onClick={() => {
+                                  setMenuOpen(false);
+                                  setProjectsDropdownOpen(false);
+                                }}
+                                className={`block py-2 text-sm transition ${
+                                  pathname === project.href
+                                    ? "text-[#ED8301]"
+                                    : "text-gray-400 hover:text-white"
+                                }`}
+                              >
+                                {project.name}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </>
+                    ) : pathname.startsWith("/services") ? (
                       <>
                         <button
                           onClick={() =>

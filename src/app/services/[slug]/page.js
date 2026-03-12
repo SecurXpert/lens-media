@@ -5,12 +5,13 @@ import { getServiceData } from "@/utils/services";
 import Link from "next/link";
 import { Montserrat } from "next/font/google";
 import { useState } from "react";
+import Image from "next/image";
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["400"] });
 
 export default function ServiceDetail() {
   const params = useParams();
-  const slug = params.slug;
+  const slug = params?.slug || "";
   const service = getServiceData(slug);
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -40,8 +41,7 @@ export default function ServiceDetail() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50"
           style={{
-            backgroundImage: `url('${service.backgroundImage || "/service1.jpg"}')`,
-            height: "600px",
+            backgroundImage: `url(${service?.backgroundImage || "/service1.jpg"})`,
           }}
         ></div>
         {/* Black gradient overlay */}
@@ -50,7 +50,6 @@ export default function ServiceDetail() {
           style={{
             background:
               "linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.9) 100%)",
-            height: "600px",
           }}
         ></div>
 
@@ -105,19 +104,21 @@ export default function ServiceDetail() {
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight font-[Azonix]">
-              {(() => {
-                const title = service.title.toUpperCase();
-                const words = title.split(" ");
-                const midPoint = Math.ceil(words.length / 2);
-                const firstHalf = words.slice(0, midPoint).join(" ");
-                const secondHalf = words.slice(midPoint).join(" ");
-                return (
-                  <>
-                    <span className="text-white">{firstHalf} </span>
-                    <span className="text-[#ED8301]">{secondHalf}</span>
-                  </>
-                );
-              })()}
+              {service?.title &&
+                (() => {
+                  const title = service.title.toUpperCase();
+                  const words = title.split(" ");
+                  const midPoint = Math.ceil(words.length / 2);
+                  const firstHalf = words.slice(0, midPoint).join(" ");
+                  const secondHalf = words.slice(midPoint).join(" ");
+
+                  return (
+                    <>
+                      <span className="text-white">{firstHalf} </span>
+                      <span className="text-[#ED8301]">{secondHalf}</span>
+                    </>
+                  );
+                })()}
             </h1>
             <p
               className={`text-lg sm:text-xl text-gray-400 mb-12 max-w-3xl ${montserrat.className}`}
@@ -268,10 +269,12 @@ export default function ServiceDetail() {
                   key={index}
                   className="rounded-2xl overflow-hidden border border-[#1C1C1C] hover:scale-[1.03] transition-transform duration-300"
                 >
-                  <img
+                  <Image
                     src={item.image}
                     alt="work"
-                    className="w-full h-48 sm:h-64 lg:h-80 xl:h-96 object-cover"
+                    width={500}
+                    height={400}
+                    className="w-full h-48 object-cover"
                   />
                 </div>
               ))}
@@ -429,8 +432,8 @@ export default function ServiceDetail() {
 
           {/* Services Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-            {service.otherServices?.map((item) => (
-              <Link key={item.slug} href={`/services/${item.slug}`}>
+            {service.otherServices?.map((item, index) => (
+              <Link key={index} href={`/services/${item.slug}`}>
                 <div className="relative rounded-2xl overflow-hidden group cursor-pointer border border-[#1C1C1C]">
                   {/* Image */}
                   <img

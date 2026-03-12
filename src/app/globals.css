@@ -2,7 +2,6 @@
 
 * {
   
- 
   box-sizing: border-box;
 }
 
@@ -63,7 +62,7 @@ body {
 main {
   /* max-width: 1400px; */
   margin: 0;
-
+  padding: 0rem;
 }
 
 @media (min-width: 640px) {
@@ -96,6 +95,19 @@ main {
 .animate-scroll {
   animation: scrollLeft 8s linear infinite;
   will-change: transform;
+}
+
+@keyframes scroll-x {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-302%);
+  }
+}
+
+.animate-scroll-x {
+  animation: scroll-x 10s linear infinite;
 }
 
 .service-card {
