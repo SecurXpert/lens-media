@@ -21,7 +21,7 @@
 
 @font-face {
   font-family: "Azonix";
-  src: url("/fonts/Azonix.ttf") format("truetype");
+  src: url("/fonts/azonix.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
@@ -34,4 +34,8 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2 {
+  font-family: "Azonix", sans-serif !important;
 }

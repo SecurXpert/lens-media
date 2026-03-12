@@ -6,6 +6,7 @@ import { useState } from 'react';
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
+  const [isProjectsDropdownOpen, setIsProjectsDropdownOpen] = useState(false);
 
   return (
     <header className="bg-white shadow-md dark:bg-gray-800">
@@ -20,7 +21,7 @@ export default function Header() {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               <Link 
-                href="/" 
+                href="/home" 
                 className="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium dark:text-white dark:hover:text-blue-400"
               >
                 Home
@@ -86,6 +87,73 @@ export default function Header() {
                         onClick={() => setIsServicesDropdownOpen(false)}
                       >
                         Conversion & Funnel Optimization
+                      </Link>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Projects Dropdown */}
+              <div className="relative">
+                <button
+                  onClick={() => setIsProjectsDropdownOpen(!isProjectsDropdownOpen)}
+                  className="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium dark:text-white dark:hover:text-blue-400 flex items-center"
+                >
+                  Projects
+                  <svg 
+                    className={`ml-1 h-4 w-4 transition-transform ${isProjectsDropdownOpen ? 'rotate-180' : ''}`} 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                
+                {isProjectsDropdownOpen && (
+                  <div className="absolute top-full left-0 mt-1 w-64 bg-white dark:bg-gray-800 rounded-md shadow-lg border border-gray-200 dark:border-gray-700 z-50">
+                    <div className="py-1">
+                      <Link 
+                        href="/projects/project1" 
+                        className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+                        onClick={() => setIsProjectsDropdownOpen(false)}
+                      >
+                        Project 1
+                      </Link>
+                      <Link 
+                        href="/projects/project2" 
+                        className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+                        onClick={() => setIsProjectsDropdownOpen(false)}
+                      >
+                        Project 2
+                      </Link>
+                      <Link 
+                        href="/projects/project3" 
+                        className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+                        onClick={() => setIsProjectsDropdownOpen(false)}
+                      >
+                        Project 3
+                      </Link>
+                      <Link 
+                        href="/projects/project4" 
+                        className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+                        onClick={() => setIsProjectsDropdownOpen(false)}
+                      >
+                        Project 4
+                      </Link>
+                      <Link 
+                        href="/projects/project5" 
+                        className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+                        onClick={() => setIsProjectsDropdownOpen(false)}
+                      >
+                        Project 5
+                      </Link>
+                      <Link 
+                        href="/projects/project6" 
+                        className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+                        onClick={() => setIsProjectsDropdownOpen(false)}
+                      >
+                        Project 6
                       </Link>
                     </div>
                   </div>
@@ -203,6 +271,89 @@ export default function Header() {
                       }}
                     >
                       Conversion & Funnel Optimization
+                    </Link>
+                  </div>
+                )}
+              </div>
+              
+              {/* Mobile Projects Dropdown */}
+              <div>
+                <button
+                  onClick={() => setIsProjectsDropdownOpen(!isProjectsDropdownOpen)}
+                  className="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-base font-medium dark:text-white dark:hover:text-blue-400 flex items-center justify-between w-full"
+                >
+                  Projects
+                  <svg 
+                    className={`ml-1 h-4 w-4 transition-transform ${isProjectsDropdownOpen ? 'rotate-180' : ''}`} 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                
+                {isProjectsDropdownOpen && (
+                  <div className="mt-1 ml-4 space-y-1">
+                    <Link 
+                      href="/projects/project1" 
+                      className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsProjectsDropdownOpen(false);
+                      }}
+                    >
+                      Project 1
+                    </Link>
+                    <Link 
+                      href="/projects/project2" 
+                      className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsProjectsDropdownOpen(false);
+                      }}
+                    >
+                      Project 2
+                    </Link>
+                    <Link 
+                      href="/projects/project3" 
+                      className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsProjectsDropdownOpen(false);
+                      }}
+                    >
+                      Project 3
+                    </Link>
+                    <Link 
+                      href="/projects/project4" 
+                      className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsProjectsDropdownOpen(false);
+                      }}
+                    >
+                      Project 4
+                    </Link>
+                    <Link 
+                      href="/projects/project5" 
+                      className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsProjectsDropdownOpen(false);
+                      }}
+                    >
+                      Project 5
+                    </Link>
+                    <Link 
+                      href="/projects/project6" 
+                      className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsProjectsDropdownOpen(false);
+                      }}
+                    >
+                      Project 6
                     </Link>
                   </div>
                 )}
