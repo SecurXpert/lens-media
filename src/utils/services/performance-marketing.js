@@ -10,6 +10,9 @@ export const performanceMarketingData = {
 
   processDescription:
     "We replace guesswork with a structured, results-focused marketing system.",
+  ctaHeading: "PERFORMANCE MARKETING",
+  ctaDescription:
+    " Book a free strategy call to discover exactly how we’ll drive leads, sales and measurable growth for your business.",
 
   details: [
     "Google Ads",
@@ -45,56 +48,53 @@ export const performanceMarketingData = {
   process: [
     {
       title: "Discovery & Strategy",
-      description:
-        "Understand your business, audience and goals to build a tailored performance marketing strategy.",
+      description: "Understand your business, audience and goals.",
     },
     {
       title: "Campaign Planning",
-      description:
-        "Define target audiences, ad formats and budget allocation to maximize reach and conversions.",
+      description: "Define target audiences, budget allocation and ad formats.",
     },
     {
       title: "Creative & Copy Execution",
       description:
-        "Design high-performing ad creatives and persuasive messaging built for engagement and action.",
+        "Design high-performing ad creatives and persuasive messaging.",
     },
     {
       title: "Launch & Optimization",
       description:
-        "Real-time monitoring, A/B testing and performance optimization to improve results continuously.",
+        "Real-time monitoring, A/B testing and performance optimization.",
     },
     {
       title: "Reporting & Scaling",
       description:
-        "Transparent analytics, performance insights and scaling strategies to maximize ROI.",
+        "Transparent analytics, insights and strategies to scale campaigns effectively.",
     },
   ],
 
   whatWeOffer: [
     {
+      icon: "FaGoogle",
       title: "Google Ads",
       description:
         "Reach the right audience at the right time. From search campaigns to display and YouTube ads, we optimize every campaign for maximum ROI, clicks and conversions.",
     },
     {
+      icon: "FaFacebook",
       title: "Meta Ads (Facebook & Instagram)",
       description:
         "Engage audiences with precision targeting across social platforms. We craft campaigns that generate leads, drive sales and increase brand awareness through creative ad formats and smart optimization.",
     },
     {
+      icon: "FaSearch",
       title: "Search Engine Marketing (SEM)",
       description:
         "Be visible when it matters most. Our SEM strategies combine paid search and keyword targeting to drive high-intent traffic and measurable business outcomes.",
     },
     {
-      title: "Paid Social",
-      description:
-        "Expand your reach with targeted paid campaigns across platforms like LinkedIn, TikTok and Twitter/X. Our campaigns convert viewers into customers through strategic targeting and creative messaging.",
-    },
-    {
+      icon: "FaRedo",
       title: "Retargeting",
       description:
-        "Reconnect with visitors who didn’t convert the first time. Our retargeting campaigns nurture leads and increase conversion rates while maximizing customer lifetime value.",
+        "Reconnect with visitors who didn't convert the first time. Our retargeting campaigns nurture leads and increase conversion rates while maximizing customer lifetime value.",
     },
   ],
 
@@ -119,12 +119,12 @@ export const performanceMarketingData = {
     {
       question: "Do you provide reporting and analytics?",
       answer:
-        "Absolutely. We provide transparent performance reports with actionable insights to improve campaign results.",
+        " Absolutely. You’ll get transparent, actionable insights on campaign performance and growth opportunities.",
     },
     {
       question: "What industries do you specialize in?",
       answer:
-        "We work with e-commerce, tech, lifestyle and B2B companies looking for scalable and measurable marketing growth.",
+        " We work with e-commerce, tech, lifestyle and B2B businesses seeking scalable, measurable marketing results.",
     },
   ],
 

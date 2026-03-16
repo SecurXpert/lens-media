@@ -1,22 +1,23 @@
 export const Shoot = {
   storyTitle: "THE STORY",
-  storyText: `Maison Lumière needed photography that could capture the essence of their French-inspired fine dining experience. Through meticulous lighting, careful composition, and an understanding of culinary aesthetics, we created a visual identity that elevated their brand. Every dish, every detail, every angle was crafted to evoke emotion and desire.`,
+  storyText: `Shoot Order required a visual identity that could match the fast-paced, high-intelligence world of digital advertising. Our mission was to design a platform that simplifies complex marketing data into actionable growth strategies. Through sleek, data-centric UI design and a narrative focused on "Precision Marketing," we created a brand experience that speaks directly to the modern advertiser. The result is a high-performance app interface that doesn’t just track metrics — it empowers users to dominate the digital landscape through clarity and innovation.`,
 
-  strategyTitle: "STRATEGY",
-  strategyText: `We designed a luxury jewelry website experience using a Royal Minimalist UI with elegant mahogany and gold tones. Features like 360° jewelry view, high-resolution zoom and virtual try-on help customers explore products easily and improve the online jewelry shopping experience.`,
+  strategyTitle: "THE STRATEGY",
+  strategyText: `We designed a data-driven digital marketing platform with a user-centric dark mode UI. High-contrast colors and a clean dashboard make ad tracking, analytics, and campaign insights easy to access. This intuitive design helps marketers manage high-ROI digital campaigns more efficiently.`,
 
   strategyPoints: [],
+
   projectDetails: {
-    client: "Maaaaaison Lumière",
-    serviceType: "Food Photography & Brand Imaging",
-    industry: "Hospitality / Fine Dining",
-    duration: "4 Weeks",
+    client: "Shoot Order",
+    serviceType: "App UI/UX Design & Digital Marketing Strategy",
+    industry: "Marketing Technology / SaaS",
+    duration: "8 Weeks",
     deliverables: [
-      "80+ Menu Photography",
-      "Interior & Ambiance Shots",
-      "Chef Portrait Series",
-      "Brand Lifestyle Photography",
-      "Social Media Content Library",
+      "Full Digital Marketing App Interface",
+      "Real-Time Analytics Dashboard Design",
+      "Cross-Platform Ad Management UI",
+      "Interactive Marketing Automation Flow",
+      "High-Conversion App Store Assets",
     ],
   },
 

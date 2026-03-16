@@ -14,25 +14,25 @@ export default function Type() {
       img: "/doc.jpg",
     },
     {
-      title: "MID-LEVEL ADS",
+      title: "Performance Marketing Ads",
       img: "/ads.jpg",
     },
     {
-      title: "DRONE SHOOTING",
+      title: "Cinematic Aerials",
       img: "/drone.jpg",
     },
     {
-      title: "COMMERCIALS AND ADVERTISEMENTS",
+      title: "Product & Brand Videos",
       img: "/commercial.jpg",
       className: "md:row-span-2",
     },
     {
-      title: "SHORTS & REELS",
+      title: "Social Media Growth",
       img: "/shorts.jpg",
       className: "md:col-span-2 md:row-span-2",
     },
     {
-      title: "USER GENERATED CONTENT",
+      title: "AI-Generated Content",
       img: "/ugc.jpg",
     },
   ];

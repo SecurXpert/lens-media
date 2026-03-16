@@ -9,6 +9,9 @@ export const creativeProductionData = {
   },
   processDescription:
     "We replace creative guesswork with a high-performance delivery system designed for absolute brand authority.",
+  ctaHeading: "CREATIVE PRODUCTION",
+  ctaDescription:
+    "Book a free strategy call and discover exactly how we'll drive growth for your brand.",
   details: [
     "Video Production & Editing",
     "Photography Services",
@@ -60,21 +63,25 @@ export const creativeProductionData = {
   ],
   whatWeOffer: [
     {
+      icon: "FaCamera",
       title: "Photography",
       description:
         "Go beyond stock photos. We deliver high-fidelity, custom photography that defines your brand’s visual authority. From high-concept studio sessions to lifestyle campaigns, our imagery is optimized for cross-platform impact and premium brand positioning.",
     },
     {
+      icon: "FaVideo",
       title: "Videography",
       description:
         "Stop the scroll with narrative-driven video. We produce everything from cinematic hero films to high-energy social reels (TikTok/Reels/Shorts) designed to maximize audience retention and drive measurable conversion through visual emotion.",
     },
     {
+      icon: "FaRobot",
       title: "AI Video Generation",
       description:
         "Hyper-scale your output without the overhead. We leverage cutting-edge generative AI models to create realistic, on-brand video assets at a velocity traditional studios can’t match. Perfect for rapid testing, personalized messaging, and innovative digital campaigns.",
     },
     {
+      icon: "FaShareAlt",
       title: "Bulk Social Media Content",
       description:
         "Eliminate content gaps with our systematic 'Content Vault' approach. We provide 30, 60 or 90+ days of ready-to-post, platform-specific assets. Maintain 24/7 brand visibility and build topical authority while your competitors are still ideating.",

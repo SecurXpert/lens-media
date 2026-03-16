@@ -1,7 +1,7 @@
 export const brandingDesignData = {
   title: "Design That Defines Your Brand Authority ",
   description:
-    "In a digital landscape saturated with noise, we deliver cinematic experiences that stop the scroll and command authority. Our production house fuses world-class cinematography and high-end photography with AI-driven efficiency to produce content at the speed of modern business.",
+    "In a market flooded with visuals and messages, we craft cohesive brand systems that resonate, inspire trust and stand out. Our branding & design service fuses strategy, creativity and digital-first thinking to deliver an identity that performs across every touchpoint.",
   backgroundImage: "/service2.jpg",
   serviceExcellenceHeading: {
     line1: "THE DESIGN",
@@ -9,6 +9,9 @@ export const brandingDesignData = {
   },
   processDescription:
     "We replace creative guesswork with a structured, results-driven design approach. ",
+  ctaHeading: "BRANDING & DESIGN",
+  ctaDescription:
+    "Book a free strategy call and discover exactly how we’ll craft a brand identity that drives recognition, loyalty and growth. ",
   details: [
     "Video Production & Editing",
     "Photography Services",
@@ -35,7 +38,7 @@ export const brandingDesignData = {
     {
       title: "Discovery & Research",
       description:
-        "Deep-dive Understand your business, audience, and competitive landscape.",
+        " Understand your business, audience, and competitive landscape.",
     },
     {
       title: "Concept Development",
@@ -45,7 +48,7 @@ export const brandingDesignData = {
     {
       title: "Design Execution",
       description:
-        "Expert execution Detailed design work for all brand assets and digital interfaces.",
+        "Detailed design work for all brand assets and digital interfaces.",
     },
     {
       title: "Review & Refinement",
@@ -59,21 +62,25 @@ export const brandingDesignData = {
   ],
   whatWeOffer: [
     {
+      icon: "FaFigma",
       title: "Brand Identity Design",
       description:
         "We create a visual language that embodies your brand values. From logos, typography and color palettes to iconography and brand assets, every element is crafted to communicate authority, trust and personality.",
     },
     {
+      icon: "FaCogs",
       title: "Brand Management",
       description:
         " Consistency is king. We develop comprehensive brand guidelines and systems to ensure your messaging, visuals and voice are seamless across all platforms keeping your brand cohesive and recognizable at every touchpoint.",
     },
     {
+      icon: "FaDesktop",
       title: "UI/UX Design",
       description:
         "Design experiences that delight and convert. Our interface and user experience designs prioritize clarity, usability and engagement to maximize user retention and drive meaningful interactions.",
     },
     {
+      icon: "FaGlobe",
       title: "Website Design",
       description:
         "From landing pages to full-scale websites, we deliver visually stunning, responsive and high-performing web designs. Every site is optimized for conversions, speed and a smooth user experience.",
@@ -116,15 +123,15 @@ export const brandingDesignData = {
   ],
   keyMetrics: [
     {
-      value: "4X",
+      value: "2X",
       label: "Higher Engagement",
     },
     {
-      value: "90+",
+      value: "120+",
       label: "Days of Content",
     },
     {
-      value: "48HR",
+      value: "24HR",
       label: "Turnaround",
     },
     {

@@ -1,22 +1,23 @@
 export const Aroma = {
   storyTitle: "THE STORY",
-  storyText: `Maison Lumière needed photography that could capture the essence of their French-inspired fine dining experience. Through meticulous lighting, careful composition, and an understanding of culinary aesthetics, we created a visual identity that elevated their brand. Every dish, every detail, every angle was crafted to evoke emotion and desire.`,
+  storyText: `Aroma Multi Cuisine Restaurant required a visual feast to match their diverse and flavorful menu. Our mission was to capture the sensory experience of their kitchen — the sizzle, the spice and the plating artistry. Through high-end cinematic food videography, we brought their signature dishes to life, creating a digital appetite for their audience. We transformed their culinary passion into a visual brand story that resonates with food lovers, ensuring that Aroma isn't just a place to eat but a destination for a complete gastronomic experience.`,
 
-  strategyTitle: "STRATEGY",
-  strategyText: `We designed a luxury jewelry website experience using a Royal Minimalist UI with elegant mahogany and gold tones. Features like 360° jewelry view, high-resolution zoom and virtual try-on help customers explore products easily and improve the online jewelry shopping experience.`,
+  strategyTitle: "THE STRATEGY",
+  strategyText: `We created a social media marketing strategy for restaurants using engaging food reels and behind-the-scenes kitchen content. With targeted local ads and strategic posting times, we reached nearby food lovers and increased restaurant visibility. This approach boosted footfall, table bookings and social media growth.`,
 
   strategyPoints: [],
+
   projectDetails: {
-    client: "Maison Lumière",
-    serviceType: "Food Photography & Brand Imaging",
-    industry: "Hospitality / Fine Dining",
-    duration: "4 Weeks",
+    client: "Aroma Multi Cuisine Restaurant",
+    serviceType: "Cinematography & Social Media Marketing",
+    industry: "Food & Hospitality",
+    duration: "Ongoing Partnership",
     deliverables: [
-      "80+ Menu Photography",
-      "Interior & Ambiance Shots",
-      "Chef Portrait Series",
-      "Brand Lifestyle Photography",
-      "Social Media Content Library",
+      "Cinematic Signature Dish Videos",
+      "Viral Instagram Reels & TikToks",
+      "Targeted Meta Ad Campaigns",
+      "Professional Food Photography",
+      "Google My Business Optimization",
     ],
   },
 

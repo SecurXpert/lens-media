@@ -47,7 +47,7 @@ export default function Footer() {
 
         {/* QUICK LINKS */}
         <div>
-          <h4 className="text-[#ffb000] tracking-widest mb-6 font-semibold font-[Azonix] text-sm sm:text-base">
+          <h4 className="text-[#FE9A00] tracking-widest mb-6 font-semibold font-[Azonix] text-sm sm:text-base">
             QUICK LINKS
           </h4>
 
@@ -67,7 +67,7 @@ export default function Footer() {
 
         {/* CONTACT */}
         <div>
-          <h4 className="text-[#ffb000] tracking-widest mb-6 font-semibold font-[Azonix] text-sm sm:text-base">
+          <h4 className="text-[#FE9A00] tracking-widest mb-6 font-semibold font-[Azonix] text-sm sm:text-base">
             GET IN TOUCH
           </h4>
 
@@ -75,21 +75,21 @@ export default function Footer() {
             <div
               className={`${montserrat.className} flex items-center gap-3 text-sm sm:text-base`}
             >
-              <FiMail className="text-[#ffb000] text-lg shrink-0" />
+              <FiMail className="text-[#FE9A00] text-lg shrink-0" />
               hello@lenslight.media
             </div>
 
             <div
               className={`${montserrat.className} flex items-center gap-3 text-sm sm:text-base`}
             >
-              <FiPhone className="text-[#ffb000] text-lg shrink-0" />
+              <FiPhone className="text-[#FE9A00] text-lg shrink-0" />
               +1 (555) 000-1234
             </div>
 
             <div
               className={`${montserrat.className} flex items-start gap-3 text-sm sm:text-base`}
             >
-              <FiMapPin className="text-[#ffb000] text-lg mt-1 shrink-0" />
+              <FiMapPin className="text-[#FE9A00] text-lg mt-1 shrink-0" />
               <div>
                 123 Creative Lane <br />
                 Los Angeles, CA 90028

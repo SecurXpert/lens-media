@@ -1,23 +1,25 @@
 export const Veloura = {
   storyTitle: "THE STORY",
-  storyText: `Maison Lumière needed photography that could capture the essence of their French-inspired fine dining experience. Through meticulous lighting, careful composition, and an understanding of culinary aesthetics, we created a visual identity that elevated their brand. Every dish, every detail, every angle was crafted to evoke emotion and desire. The result is a photographic collection that doesn't just show food—it tells a story of passion, craftsmanship, and refined taste.`,
+  storyText: `Veloura Studio required a visual narrative that could capture the intricate artistry and heritage of their haute couture collections. Through high-contrast editorial lighting, avant-garde composition, and an obsession with textile detail, we created a brand identity that emphasizes exclusivity. Every frame was directed to evoke a sense of timeless elegance and modern sophistication. The result is a comprehensive media suite that doesn’t just showcase apparel it defines a lifestyle of unapologetic luxury.
+`,
 
   strategyTitle: "STRATEGY",
-  strategyText: `We designed a luxury jewelry website experience using a Royal Minimalist UI with elegant mahogany and gold tones. Features like 360° jewelry view, high-resolution zoom and virtual try-on help customers explore products easily and improve the online jewelry shopping experience.`,
+  strategyText: `We created a premium fashion brand visual strategy using minimalist design and cinematic storytelling. High-quality 8K video production and studio photography highlight the elegance of the garments. This approach strengthens brand identity, luxury perception, and social media reach.
+`,
 
   strategyPoints: [],
 
   projectDetails: {
-    client: "Maison Lumière",
-    serviceType: "Food Photography & Brand Imaging",
-    industry: "Hospitality / Fine Dining",
-    duration: "4 Weeks",
+    client: "Veloura Studio",
+    serviceType: "Performance Marketing & Creative Production",
+    industry: "High-End Retail / Fashion",
+    duration: "6 Weeks",
     deliverables: [
-      "80+ Menu Photography",
-      "Interior & Ambiance Shots",
-      "Chef Portrait Series",
-      "Brand Lifestyle Photography",
-      "Social Media Content Library",
+      "40+ Editorial Lookbook Shots",
+      "Cinematic Brand Film (60s)",
+      'Social Media "High-Reach" Campaign',
+      "E-commerce Product Catalog",
+      "Influencer Media Kits",
     ],
   },
 

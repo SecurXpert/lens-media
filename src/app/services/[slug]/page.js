@@ -6,8 +6,57 @@ import Link from "next/link";
 import { Montserrat } from "next/font/google";
 import { useState } from "react";
 import Image from "next/image";
+import {
+  FaCamera,
+  FaVideo,
+  FaRobot,
+  FaShareAlt,
+  FaFigma,
+  FaCogs,
+  FaDesktop,
+  FaGlobe,
+  FaGoogle,
+  FaFacebook,
+  FaSearch,
+  FaUsers,
+  FaRedo,
+  FaHashtag,
+  FaPenFancy,
+  FaUserPlus,
+  FaWindowMaximize,
+  FaFilter,
+  FaEnvelope,
+  FaChartLine,
+} from "react-icons/fa";
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["400"] });
+
+// Icon mapping function
+const getIcon = (iconName) => {
+  const iconMap = {
+    FaCamera,
+    FaVideo,
+    FaRobot,
+    FaShareAlt,
+    FaFigma,
+    FaCogs,
+    FaDesktop,
+    FaGlobe,
+    FaGoogle,
+    FaFacebook,
+    FaSearch,
+    FaUsers,
+    FaRedo,
+    FaHashtag,
+    FaPenFancy,
+    FaUserPlus,
+    FaWindowMaximize,
+    FaFilter,
+    FaEnvelope,
+    FaChartLine,
+  };
+  return iconMap[iconName] || null;
+};
 
 export default function ServiceDetail() {
   const params = useParams();
@@ -53,7 +102,7 @@ export default function ServiceDetail() {
           }}
         ></div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
           {/* Back Button */}
           <div className="mb-14">
             <Link
@@ -128,25 +177,19 @@ export default function ServiceDetail() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-16">
-              <button
-                className="text-black font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:scale-105 transition-transform font-[Azonix] text-sm sm:text-base"
-                style={{
-                  background:
-                    "linear-gradient(90deg, #FE9A00 0%, #E17100 100%)",
-                  boxShadow:
-                    "0px 4px 6px -4px #E171004D, 0px 10px 15px -3px #E171004D",
-                }}
-              >
-                START THIS SERVICE →
-              </button>
-              <button
-                className="text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-[#ED8301] hover:text-black transition-colors font-[Azonix] text-sm sm:text-base"
-                style={{
-                  border: "1.32px solid #F5A62366",
-                }}
-              >
-                BOOK A STRATEGY CALL
-              </button>
+              <Link href="/contact">
+                <button
+                  className="text-black font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:scale-105 transition-transform font-[Azonix] text-sm sm:text-base"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, #FE9A00 0%, #E17100 100%)",
+                    boxShadow:
+                      "0px 4px 6px -4px #E171004D, 0px 10px 15px -3px #E171004D",
+                  }}
+                >
+                  BOOK A STRATEGY CALL →
+                </button>
+              </Link>
             </div>
 
             {/* Statistics */}
@@ -197,26 +240,42 @@ export default function ServiceDetail() {
               {service.serviceExcellenceHeading?.line2 || "Excellence"}
             </p>
           </h2>
-          <div className=" p-4 sm:p-6 lg:p-8 rounded-2xl">
+          <div className="rounded-2xl">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               {service.whatWeOffer
-                ? service.whatWeOffer.map((item, index) => (
-                    <div
-                      key={index}
-                      className="border border-[#1C1C1C] p-4 sm:p-6 rounded-xl"
-                    >
-                      <h3
-                        className={`text-lg sm:text-xl lg:text-2xl font-extrabold text-white mb-3 sm:mb-4 ${montserrat.className}`}
+                ? service.whatWeOffer.map((item, index) => {
+                    const Icon = getIcon(item.icon);
+                    return (
+                      <div
+                        key={index}
+                        className="border border-[#1C1C1C] p-4 sm:p-6 rounded-xl"
                       >
-                        {item.title}
-                      </h3>
-                      <p
-                        className={`text-sm sm:text-base text-gray-400 leading-relaxed ${montserrat.className}`}
-                      >
-                        {item.description}
-                      </p>
-                    </div>
-                  ))
+                        <div className="mb-3 sm:mb-4">
+                          {Icon && (
+                            <div
+                              className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg flex items-center justify-center"
+                              style={{
+                                background: "#F5A6231e",
+                                border: "1.32px solid #F5A62333",
+                              }}
+                            >
+                              <Icon className="text-[#E57600] text-lg sm:text-xl" />
+                            </div>
+                          )}
+                        </div>
+                        <h3
+                          className={`text-lg sm:text-xl lg:text-2xl font-extrabold text-white mb-3 sm:mb-4 ${montserrat.className}`}
+                        >
+                          {item.title}
+                        </h3>
+                        <p
+                          className={`text-sm sm:text-base text-gray-400 leading-relaxed ${montserrat.className}`}
+                        >
+                          {item.description}
+                        </p>
+                      </div>
+                    );
+                  })
                 : service.details.map((item, index) => (
                     <div key={index} className="flex items-start">
                       <div className="w-6 h-6 bg-[#ED8301] rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
@@ -478,14 +537,16 @@ export default function ServiceDetail() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-[Azonix] text-black leading-tight mb-4 sm:mb-6">
             LET'S BUILD YOUR
             <br />
-            <span className="text-white">BRANDING & DESIGN</span>
+            <span className="text-white">
+              {service.ctaHeading || "SERVICE"}
+            </span>
             <br />
             STRATEGY
           </h2>
 
           <p className="text-sm sm:text-base text-black/80 max-w-lg sm:max-w-xl mx-auto mb-6 sm:mb-8 lg:mb-10">
-            Book a free strategy call and discover exactly how we'll drive
-            growth for your brand.
+            {service.ctaDescription ||
+              "Book a free strategy call and discover exactly how we'll help your business grow."}
           </p>
 
           <Link href="/contact">

@@ -1,22 +1,23 @@
 export const Pure = {
   storyTitle: "THE STORY",
-  storyText: `Maison Lumière needed photography that could capture the essence of their French-inspired fine dining experience. Through meticulous lighting, careful composition, and an understanding of culinary aesthetics, we created a visual identity that elevated their brand. Every dish, every detail, every angle was crafted to evoke emotion and desire.`,
+  storyText: `PureSipp prioritized a visual identity that could communicate the absolute purity and refreshing essence of their mineral-enriched water. Our mission was to introduce this new brand to the market with a splash. By combining high-end AI-driven video technology with a comprehensive full-scale video shoot, we captured the crisp, life-giving nature of PureSipp. We created a narrative that emphasizes health, safety and modern hydration, ensuring that PureSipp stands out as the premium choice in a crowded marketplace.`,
 
-  strategyTitle: "STRATEGY",
-  strategyText: `We designed a luxury jewelry website experience using a Royal Minimalist UI with elegant mahogany and gold tones. Features like 360° jewelry view, high-resolution zoom and virtual try-on help customers explore products easily and improve the online jewelry shopping experience.`,
+  strategyTitle: "THE STRATEGY",
+  strategyText: `We built a digital-first branding strategy using AI-powered product animations and video marketing. Through targeted social media campaigns and storytelling, we promoted the message #SipPureSipSafe and highlighted the brand’s purity and added minerals. This strategy helped create strong brand awareness and high engagement during the launch.`,
 
   strategyPoints: [],
+
   projectDetails: {
-    client: "Maison Lumière",
-    serviceType: "Food Photography & Brand Imaging",
-    industry: "Hospitality / Fine Dining",
-    duration: "4 Weeks",
+    client: "PureSipp",
+    serviceType: "AI Video Production & Digital Marketing",
+    industry: "Beverage / FMCG",
+    duration: "6 Weeks",
     deliverables: [
-      "80+ Menu Photography",
-      "Interior & Ambiance Shots",
-      "Chef Portrait Series",
-      "Brand Lifestyle Photography",
-      "Social Media Content Library",
+      "AI-Generated Brand Commercial",
+      "Full-Scale Cinematic Product Video",
+      "Social Media Launch Campaign",
+      "#SipPureSipSafe Marketing Assets",
+      "Digital Brand Identity Suite",
     ],
   },
 

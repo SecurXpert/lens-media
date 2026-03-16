@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { FaPaperPlane } from "react-icons/fa";
 
 export default function ContactForm() {
@@ -19,6 +19,9 @@ export default function ContactForm() {
   });
 
   const [errors, setErrors] = useState({});
+  const [success, setSuccess] = useState(false);
+  const formRef = useRef(null);
+  const navbarHeight = 115; // adjust to your navbar height
 
   const validateForm = () => {
     const newErrors = {};
@@ -94,15 +97,50 @@ export default function ContactForm() {
 
     if (validateForm()) {
       console.log("Form submitted:", formData);
+      setSuccess(true);
+
+      setTimeout(() => {
+        setSuccess(false);
+      }, 5000); // 5 seconds
+    }
+    setFormData({
+      fullName: "",
+      email: "",
+      phone: "",
+      subject: "",
+      message: "",
+      agreeToTerms: false,
+      contactMethods: {
+        email: false,
+        phone: false,
+        whatsapp: false,
+      },
+    });
+
+    // Safely calculate element position and scroll
+    if (formRef.current) {
+      const elementPosition =
+        formRef.current.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({
+        top: elementPosition - navbarHeight,
+        behavior: "smooth",
+      });
     }
   };
 
   return (
-    <section className="px-6 pb-3">
+    <section ref={formRef} className="px-6 pb-3">
+      {" "}
       <div className="max-w-4xl mx-auto bg-[linear-gradient(135deg,rgba(29,41,61,0.5)_0%,rgba(15,23,43,0.5)_100%)] border border-[#243455] p-10 rounded-xl">
         <p className="text-2xl text-center font-orbitron tracking-wide mb-2 text-[#FE9A00]">
           Contact <span className="text-[#FE9A00]">Form</span>
         </p>
+
+        {success && (
+          <p className="text-green-500 text-center mb-4 bg-green-900/50 p-2 rounded">
+            Message sent successfully 🚀
+          </p>
+        )}
 
         <form onSubmit={handleSubmit} className="space-y-6 mt-10">
           {/* FULL NAME */}

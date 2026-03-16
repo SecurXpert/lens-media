@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 
 import { IoCameraOutline, IoPlayOutline } from "react-icons/io5";
 import { PiMagicWand } from "react-icons/pi";
@@ -66,7 +67,7 @@ export default function Services() {
           </h1>
 
           {/* LEFT SIDE IMAGE */}
-          <div className="hidden md:block absolute left-[-2%] top-2/5 -translate-y-1/2 z-20">
+          <div className="hidden md:block absolute left-[-2%] top-2/5 -translate-y-1/2 z-20 text-[#FE9A00]">
             <img
               src="/ourservicebg1.png"
               alt="left decoration"
@@ -75,7 +76,7 @@ export default function Services() {
           </div>
 
           {/* RIGHT SIDE IMAGE */}
-          <div className="hidden md:block absolute right-0 top-2/5 -translate-y-1/2 z-20">
+          <div className="hidden md:block absolute right-0 top-2/5 -translate-y-1/2 z-20 text-[#FE9A00]">
             <img
               src="/ourservicebg2.png"
               alt="right decoration"
@@ -93,7 +94,7 @@ export default function Services() {
           </div>
           {/* LEFT TEXT */}
           <div className="hidden md:block absolute left-4 sm:left-10 md:left-20 top-[65%] md:top-2/3 -translate-y-1/2 max-w-[180px] sm:max-w-[220px] text-white z-30">
-            <GoPin className="bg-[#fb9600] p-2.5 w-14 h-14 text-white rounded-[10]" />
+            <GoPin className="bg-[#E57600] p-2.5 w-14 h-14 text-white rounded-[10]" />
             <p className="text-sm leading-relaxed text-white/90 pt-4">
               On this website you will discover our passion for capturing real
               moments. From weddings to special events, We turn memories into
@@ -122,7 +123,7 @@ export default function Services() {
             </div>
           </div>
         </section>
-        <section className="w-full min-h-screen text-white">
+        <section className="w-full min-h-screen text-white mt-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-0">
             {" "}
             {/* 1 LEFT IMAGE */}
@@ -162,7 +163,7 @@ export default function Services() {
             </div>
             {/* TOP RIGHT CONTENT */}
             <div className="flex flex-col justify-center px-6 sm:px-10 md:px-16 py-10 md:py-12 bg-[#0b0b0b] order-1 md:order-1">
-              <span className="text-yellow-500 text-sm mb-3">01</span>
+              <span className="text-[#FE9A00] text-sm mb-3">01</span>
 
               <h2 className="text-3xl md:text-4xl font-[Azonix] mb-4 tracking-wide">
                 CREATIVE PRODUCTION
@@ -178,45 +179,45 @@ export default function Services() {
               {/* SERVICES BUTTONS */}
               <div className="grid md:grid-cols-2 grid-cols-1 gap-6 mb-8">
                 <div className="bg-[#1C1C1C] rounded-2xl p-6 flex items-center space-x-4 hover:bg-[#2a2a2a] transition-colors">
-                  <IoCameraOutline className="text-yellow-500 text-2xl" />
+                  <IoCameraOutline className="text-[#E57600] text-2xl" />
                   <span className="text-gray-400 font-Montserrat">
                     Photography
                   </span>
                 </div>
 
                 <div className="bg-[#1C1C1C] rounded-2xl p-6 flex items-center space-x-4 hover:bg-[#2a2a2a] transition-colors">
-                  <IoPlayOutline className="text-yellow-500 text-2xl" />
+                  <IoPlayOutline className="text-[#E57600] text-2xl" />
                   <span className="text-gray-400 font-Montserrat">
                     Videography
                   </span>
                 </div>
 
                 <div className="bg-[#1C1C1C] rounded-2xl p-6 flex items-center space-x-4 hover:bg-[#2a2a2a] transition-colors">
-                  <PiMagicWand className="text-yellow-500 text-2xl" />
+                  <PiMagicWand className="text-[#E57600] text-2xl" />
                   <span className="text-gray-400 font-Montserrat">
                     Pre-Wedding Shoots
                   </span>
                 </div>
 
                 <div className="bg-[#1C1C1C] rounded-2xl p-6 flex items-center space-x-4 hover:bg-[#2a2a2a] transition-colors">
-                  <TbShare className="text-yellow-500 text-2xl" />
+                  <TbShare className="text-[#E57600] text-2xl" />
                   <span className="text-gray-400 font-Montserrat">
                     Social Media Content
                   </span>
                 </div>
               </div>
 
-              <a
-                href="#"
+              <Link
+                href="/services/creative-production"
                 className="text-sm tracking-wider font-semibold"
                 style={{ color: "#fb9600", textDecoration: "none" }}
               >
                 EXPLORE SERVICE →
-              </a>
+              </Link>
             </div>
             {/* BOTTOM LEFT CONTENT */}
             <div className="flex flex-col justify-center px-10 md:px-16 py-12 bg-[#0b0b0b] order-3 md:order-3">
-              <span className="text-yellow-500 text-sm mb-3">02</span>
+              <span className="text-[#FE9A00] text-sm mb-3">02</span>
 
               <h2 className="text-3xl md:text-4xl font-[Azonix] mb-4 tracking-wide">
                 BRANDING & DESIGN
@@ -230,41 +231,41 @@ export default function Services() {
 
               <div className="grid md:grid-cols-2 grid-cols-1 gap-6 mb-8">
                 <div className="bg-[#1C1C1C] rounded-2xl p-6 flex items-center space-x-4 hover:bg-[#2a2a2a] transition-colors">
-                  <IoIosColorPalette className="text-yellow-500 text-2xl" />
+                  <IoIosColorPalette className="text-[#E57600] text-2xl" />
                   <span className="text-gray-400 font-Montserrat">
                     Brand Identity Design
                   </span>
                 </div>
 
                 <div className="bg-[#1C1C1C] rounded-2xl p-6 flex items-center space-x-4 hover:bg-[#2a2a2a] transition-colors">
-                  <HiArrowPathRoundedSquare className="text-yellow-500 text-2xl" />
+                  <HiArrowPathRoundedSquare className="text-[#E57600] text-2xl" />
                   <span className="text-gray-400 font-Montserrat">
                     Brand Management
                   </span>
                 </div>
 
                 <div className="bg-[#1C1C1C] rounded-2xl p-6 flex items-center space-x-4 hover:bg-[#2a2a2a] transition-colors">
-                  <GrCursor className="text-yellow-500 text-2xl" />
+                  <GrCursor className="text-[#E57600] text-2xl" />
                   <span className="text-gray-400 font-Montserrat">
                     UI/UX Design
                   </span>
                 </div>
 
                 <div className="bg-[#1C1C1C] rounded-2xl p-6 flex items-center space-x-4 hover:bg-[#2a2a2a] transition-colors">
-                  <GoTable className="text-yellow-500 text-2xl" />
+                  <GoTable className="text-[#E57600] text-2xl" />
                   <span className="text-gray-400 font-Montserrat">
                     Website Design
                   </span>
                 </div>
               </div>
 
-              <a
-                href="#"
+              <Link
+                href="/services/branding-design"
                 className="text-sm tracking-wider font-semibold"
                 style={{ color: "#fb9600", textDecoration: "none" }}
               >
                 EXPLORE SERVICE →
-              </a>
+              </Link>
             </div>
             {/*  2 RIGHT IMAGE */}
             <div className="relative order-4 sm:order-4 md:order-4 lg:order-3">
@@ -326,7 +327,7 @@ export default function Services() {
             </div>
             {/* TOP RIGHT CONTENT */}
             <div className="flex flex-col justify-center px-10 md:px-16 py-12 bg-[#0b0b0b] order-5 md:order-5">
-              <span className="text-yellow-500 text-sm mb-3">03</span>
+              <span className="text-[#FE9A00] text-sm mb-3">03</span>
 
               <h2 className="text-3xl md:text-4xl font-[Azonix] mb-4 tracking-wide">
                 PERFORMANCE MARKETING
@@ -342,43 +343,43 @@ export default function Services() {
               {/* SERVICES BUTTONS */}
               <div className="grid md:grid-cols-2 grid-cols-1 gap-6 mb-8">
                 <div className="bg-[#1C1C1C] rounded-2xl p-6 flex items-center space-x-4 hover:bg-[#2a2a2a] transition-colors">
-                  <HiMiniMagnifyingGlass className="text-yellow-500 text-2xl" />
+                  <HiMiniMagnifyingGlass className="text-[#E57600] text-2xl" />
                   <span className="text-gray-400 font-Montserrat">
                     Google Ads
                   </span>
                 </div>
 
                 <div className="bg-[#1C1C1C] rounded-2xl p-6 flex items-center space-x-4 hover:bg-[#2a2a2a] transition-colors">
-                  <TbShare className="text-yellow-500 text-2xl" />
+                  <TbShare className="text-[#E57600] text-2xl" />
                   <span className="text-gray-400 font-Montserrat">
                     Meta Ads
                   </span>
                 </div>
 
                 <div className="bg-[#1C1C1C] rounded-2xl p-6 flex items-center space-x-4 hover:bg-[#2a2a2a] transition-colors">
-                  <VscGraph className="text-yellow-500 text-2xl" />
+                  <VscGraph className="text-[#E57600] text-2xl" />
                   <span className="text-gray-400 font-Montserrat">SEM</span>
                 </div>
 
                 <div className="bg-[#1C1C1C] rounded-2xl p-6 flex items-center space-x-4 hover:bg-[#2a2a2a] transition-colors">
-                  <GrLineChart className="text-yellow-500 text-2xl" />
+                  <GrLineChart className="text-[#E57600] text-2xl" />
                   <span className="text-gray-400 font-Montserrat">
                     Retargeting
                   </span>
                 </div>
               </div>
 
-              <a
-                href="#"
+              <Link
+                href="/services/performance-marketing"
                 className="text-sm tracking-wider font-semibold"
                 style={{ color: "#fb9600", textDecoration: "none" }}
               >
                 EXPLORE SERVICE →
-              </a>
+              </Link>
             </div>
             {/* BOTTOM LEFT CONTENT */}
             <div className="flex flex-col justify-center px-10 md:px-16 py-12 bg-[#0b0b0b] order-7 md:order-7">
-              <span className="text-yellow-500 text-sm mb-3">04</span>
+              <span className="text-[#FE9A00] text-sm mb-3">04</span>
 
               <h2 className="text-3xl md:text-4xl font-[Azonix] mb-4 tracking-wide">
                 Digital Marketing
@@ -392,33 +393,33 @@ export default function Services() {
 
               <div className="grid md:grid-cols-2 grid-cols-1 gap-6 mb-8">
                 <div className="bg-[#1C1C1C] rounded-2xl p-6 flex items-center space-x-4 hover:bg-[#2a2a2a] transition-colors">
-                  <HiMiniMagnifyingGlass className="text-yellow-500 text-2xl" />
+                  <HiMiniMagnifyingGlass className="text-[#E57600] text-2xl" />
                   <span className="text-gray-400 font-Montserrat">SEO</span>
                 </div>
 
                 <div className="bg-[#1C1C1C] rounded-2xl p-6 flex items-center space-x-4 hover:bg-[#2a2a2a] transition-colors">
-                  <CiGlobe className="text-yellow-500 text-2xl" />
+                  <CiGlobe className="text-[#E57600] text-2xl" />
                   <span className="text-gray-400 font-Montserrat">SMM</span>
                 </div>
 
                 <div className="bg-[#1C1C1C] rounded-2xl p-6 flex items-center space-x-4 hover:bg-[#2a2a2a] transition-colors">
-                  <GoTable className="text-yellow-500 text-2xl" />
+                  <GoTable className="text-[#E57600] text-2xl" />
                   <span className="text-gray-400 font-Montserrat">Content</span>
                 </div>
 
                 <div className="bg-[#1C1C1C] rounded-2xl p-6 flex items-center space-x-4 hover:bg-[#2a2a2a] transition-colors">
-                  <LuFilter className="text-yellow-500 text-2xl" />
+                  <LuFilter className="text-[#E57600] text-2xl" />
                   <span className="text-gray-400 font-Montserrat">Leads</span>
                 </div>
               </div>
 
-              <a
-                href="#"
+              <Link
+                href="/services/digital-marketing"
                 className="text-sm tracking-wider font-semibold"
                 style={{ color: "#fb9600", textDecoration: "none" }}
               >
                 EXPLORE SERVICE →
-              </a>
+              </Link>
             </div>
             {/* 4 RIGHT IMAGE */}
             <div className="relative order-8 md:order-8">
@@ -480,7 +481,7 @@ export default function Services() {
             </div>
             {/* TOP RIGHT CONTENT */}
             <div className="flex flex-col justify-center px-10 md:px-16 py-12 bg-[#0b0b0b] order-9 md:order-9">
-              <span className="text-yellow-500 text-sm mb-3">05</span>
+              <span className="text-[#FE9A00] text-sm mb-3">05</span>
 
               <h2 className="text-3xl md:text-4xl font-[Azonix] mb-4 tracking-wide">
                 Conversion & Funnel Optimization
@@ -496,46 +497,46 @@ export default function Services() {
               {/* SERVICES BUTTONS */}
               <div className="grid md:grid-cols-2 grid-cols-1 gap-6 mb-8">
                 <div className="bg-[#1C1C1C] rounded-2xl p-6 flex items-center space-x-4 hover:bg-[#2a2a2a] transition-colors">
-                  <GoTable className="text-yellow-500 text-2xl" />
+                  <GoTable className="text-[#E57600] text-2xl" />
                   <span className="text-gray-400 font-Montserrat">
                     Landing Page Strategy
                   </span>
                 </div>
 
                 <div className="bg-[#1C1C1C] rounded-2xl p-6 flex items-center space-x-4 hover:bg-[#2a2a2a] transition-colors">
-                  <LuFilter className="text-yellow-500 text-2xl" />
+                  <LuFilter className="text-[#E57600] text-2xl" />
                   <span className="text-gray-400 font-Montserrat">
                     Funnel Design
                   </span>
                 </div>
 
                 <div className="bg-[#1C1C1C] rounded-2xl p-6 flex items-center space-x-4 hover:bg-[#2a2a2a] transition-colors">
-                  <MdOutlineMail className="text-yellow-500 text-2xl" />
+                  <MdOutlineMail className="text-[#E57600] text-2xl" />
                   <span className="text-gray-400 font-Montserrat">
                     Lead Nurturing Flows
                   </span>
                 </div>
 
                 <div className="bg-[#1C1C1C] rounded-2xl p-6 flex items-center space-x-4 hover:bg-[#2a2a2a] transition-colors">
-                  <GrLineChart className="text-yellow-500 text-2xl" />
+                  <GrLineChart className="text-[#E57600] text-2xl" />
                   <span className="text-gray-400 font-Montserrat">CRO</span>
                 </div>
 
                 <div className="bg-[#1C1C1C] rounded-2xl p-6 flex items-center space-x-4 hover:bg-[#2a2a2a] transition-colors">
-                  <AiOutlineThunderbolt className="text-yellow-500 text-2xl" />
+                  <AiOutlineThunderbolt className="text-[#E57600] text-2xl" />
                   <span className="text-gray-400 font-Montserrat">
                     Marketing Automation
                   </span>
                 </div>
               </div>
 
-              <a
-                href="#"
+              <Link
+                href="/services/conversion-funnel"
                 className="text-sm tracking-wider font-semibold"
                 style={{ color: "#fb9600", textDecoration: "none" }}
               >
                 EXPLORE SERVICE →
-              </a>
+              </Link>
             </div>
           </div>
         </section>

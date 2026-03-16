@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { HiOutlinePlus, HiOutlineLightBulb } from "react-icons/hi";
 
 <link href="https://fonts.cdnfonts.com/css/azonix" rel="stylesheet"></link>;
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],

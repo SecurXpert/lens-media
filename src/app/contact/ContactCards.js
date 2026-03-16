@@ -31,7 +31,10 @@ export default function ContactCards() {
         </div>
 
         <div className="p-8 rounded-xl bg-[#1D293D80] border border-[#314158]">
-          <FaPhone className="mx-auto text-[#FE9A00] mb-4" size={38} />
+          <FaPhone
+            className="mx-auto text-[#FE9A00] mb-4 transform scale-x-[-1]"
+            size={38}
+          />
           <p className="text-[#FE9A00] font-inter font-medium">Phone</p>
           <p className="text-gray-400 mt-2 font-inter">+33 7 68 57 02 49</p>
         </div>

@@ -1,23 +1,23 @@
 export const Manyavar = {
   storyTitle: "THE STORY",
-  storyText: `Maison Lumière needed photography that could capture the essence of their French-inspired fine dining experience. Through meticulous lighting, careful composition, and an understanding of culinary aesthetics, we created a visual identity that elevated their brand. Every dish, every detail, every angle was crafted to evoke emotion and desire.`,
+  storyText: `Manyavar envisioned a digital flagship that could mirror the opulence of their physical boutiques within a mobile interface. Our challenge was to translate the brilliance of fine jewelry — the way light hits a diamond and the intricate detail of gold filigree — into a high-definition digital experience. We crafted a visual identity that celebrates celebration itself, focusing on "The Art of Adornment." Every pixel was polished to ensure that the heritage of the brand remains intact while providing a futuristic, seamless shopping journey for the modern bride and groom.`,
 
-  strategyTitle: "STRATEGY",
-  strategyText: `We designed a luxury jewelry website experience using a Royal Minimalist UI with elegant mahogany and gold tones. Features like 360° jewelry view, high-resolution zoom and virtual try-on help customers explore products easily and improve the online jewelry shopping experience.`,
+  strategyTitle: "THE STRATEGY",
+  strategyText: `We designed a luxury jewelry website experience using a Royal Minimalist UI with elegant mahogany and gold tones. Features like 360° jewelry view, high-resolution zoom, and virtual try-on help customers explore products easily and enhance the online jewelry shopping experience.`,
 
   strategyPoints: [],
 
   projectDetails: {
-    client: "Maison Lumière",
-    serviceType: "Food Photography & Brand Imaging",
-    industry: "Hospitality / Fine Dining",
-    duration: "4 Weeks",
+    client: "Manyavar",
+    serviceType: "Luxury E-commerce UI/UX & Brand Digitalization",
+    industry: "High-End Jewelry / Ethnic Retail",
+    duration: "10 Weeks",
     deliverables: [
-      "80+ Menu Photography",
-      "Interior & Ambiance Shots",
-      "Chef Portrait Series",
-      "Brand Lifestyle Photography",
-      "Social Media Content Library",
+      "Premium Mobile App Architecture",
+      "360° Product Interaction Suite",
+      "Exclusive 'Bridal Collection' Interface",
+      "Seamless Checkout & Gifting Flow",
+      "High-End Digital Brand Book",
     ],
   },
 

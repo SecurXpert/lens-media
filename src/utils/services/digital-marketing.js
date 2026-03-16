@@ -10,6 +10,9 @@ export const digitalMarketingData = {
 
   processDescription:
     "We replace guesswork with a structured, measurable digital marketing system designed for scalable growth.",
+  ctaHeading: "DIGITAL MARKETING",
+  ctaDescription:
+    "Book a free strategy call to see how we’ll grow traffic, leads and revenue for your business.",
 
   details: [
     "Search Engine Optimization (SEO)",
@@ -46,8 +49,7 @@ export const digitalMarketingData = {
   process: [
     {
       title: "Discovery & Research",
-      description:
-        "Analyze your business, audience and competitors to uncover opportunities for growth.",
+      description: "Analyze your business, audience and competitors.",
     },
     {
       title: "Strategy Development",
@@ -56,51 +58,54 @@ export const digitalMarketingData = {
     },
     {
       title: "Content & Creative Execution",
-      description:
-        "Develop high-performing content, creatives and ads tailored to your audience.",
+      description: "Build high-performing content and ads.",
     },
     {
       title: "Launch & Optimization",
-      description:
-        "Monitor campaign performance, run A/B tests and continuously optimize results.",
+      description: "Monitor performance, A/B testing and refine campaigns.",
     },
     {
       title: "Reporting & Scaling",
-      description:
-        "Transparent analytics, insights and scaling strategies to accelerate growth.",
+      description: "Transparent analytics with recommendations to grow faster.",
     },
   ],
 
   whatWeOffer: [
     {
+      icon: "FaSearch",
       title: "Search Engine Optimization (SEO)",
       description:
         "Rank higher and get discovered by your ideal customers. Our SEO includes keyword research, on-page optimization, technical SEO and backlink strategies for sustainable organic growth.",
     },
     {
+      icon: "FaHashtag",
       title: "Social Media Marketing (SMM)",
       description:
-        "Engage audiences across Facebook, Instagram, LinkedIn and TikTok with creative content and optimized campaigns that build awareness and engagement.",
+        "Engage your audience on platforms like Facebook, Instagram, LinkedIn and TikTok. We create content, manage campaigns, and optimize posts to boost brand awareness and engagement.",
     },
     {
+      icon: "FaPenFancy",
       title: "Content Marketing",
       description:
-        "Create valuable content including blogs, videos, infographics and email campaigns that educate, engage and convert your audience.",
+        " Deliver valuable content that educates, entertains and converts. From blogs and infographics to videos and email campaigns, we craft content that builds trust and authority.",
     },
     {
+      icon: "FaUserPlus",
       title: "Lead Generation",
       description:
-        "Capture high-quality leads using optimized landing pages, forms and marketing funnels designed to maximize conversions.",
+        " Attract and convert high-quality leads with targeted campaigns. We use forms, landing pages and marketing funnels optimized to maximize conversions and ROI.",
     },
     {
+      icon: "FaGoogle",
       title: "Google Ads",
       description:
-        "Reach customers exactly when they are searching for your services with optimized search, display and video advertising campaigns.",
+        " Reach your customers at the exact moment they’re searching for your products or services. We manage search, display and video campaigns designed to deliver measurable results.",
     },
     {
+      icon: "FaFacebook",
       title: "Meta Ads (Facebook & Instagram)",
       description:
-        "Generate leads and sales through highly targeted campaigns on social platforms with engaging creatives and smart optimization.",
+        "Capture attention and generate leads with precision targeting. We create, run and optimize campaigns that drive clicks, conversions and sales on social platforms.",
     },
   ],
 

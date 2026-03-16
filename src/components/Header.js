@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
@@ -18,9 +18,26 @@ export default function Navbar() {
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [projectsDropdownOpen, setProjectsDropdownOpen] = useState(false);
 
+  // Close dropdowns when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      // Check if click is outside dropdown areas
+      const isClickInsideDropdown = event.target.closest(".dropdown-menu");
+      const isClickInsideButton = event.target.closest("button");
+
+      if (!isClickInsideDropdown && !isClickInsideButton) {
+        setServicesDropdownOpen(false);
+        setProjectsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Projects", href: "/Projects", hasDropdown: true },
+    { name: "Projects", href: "/projects", hasDropdown: true },
     { name: "About", href: "/about" },
     { name: "Services", href: "/services", hasDropdown: true },
   ];
@@ -34,20 +51,33 @@ export default function Navbar() {
   ];
 
   const projects = [
-    { name: "Veloura Studio", href: "/Projects/veloura" },
-    { name: "Hyndav", href: "/Projects/hyndav" },
-    { name: "Manyavar", href: "/Projects/manyavar" },
-    { name: "Shoot", href: "/Projects/shoot" },
-    { name: "Pure", href: "/Projects/pure" },
-    { name: "Aroma", href: "/Projects/aroma" },
+    { name: "Veloura Studio", href: "/projects/veloura" },
+    { name: "Hyndav", href: "/projects/hyndav" },
+    { name: "Manyavar", href: "/projects/manyavar" },
+    { name: "Shoot", href: "/projects/shoot" },
+    { name: "Pure", href: "/projects/pure" },
+    { name: "Aroma", href: "/projects/aroma" },
   ];
 
   return (
-    <div className="w-full flex justify-center sticky top-0 z-50 pt-4 sm:pt-6 px-4">
-      <div className="w-full max-w-7xl flex items-center justify-between px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-[rgba(17,16,16,0.20)] border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.6)] relative">
+    <div className="w-full flex justify-center sticky top-0 z-50 py-4 sm:py-6 px-4">
+      <div
+        className="
+  w-full max-w-7xl flex items-center justify-between
+  px-6 sm:px-8 py-3 sm:py-4
+  rounded-full relative 
+
+ 
+  
+
+  border border-white/10
+
+  shadow-[inset_0_2px_4px_rgba(255,255,255,0.25),inset_0_-2px_6px_rgba(0,0,0,0.9),0_10px_40px_rgba(0,0,0,0.6)]
+"
+      >
+        {" "}
         {/* Glass shine */}
         <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent opacity-30 pointer-events-none rounded-full" />
-
         {/* Logo */}
         <div className="relative z-10">
           <Image
@@ -58,7 +88,6 @@ export default function Navbar() {
             className="w-[120px] sm:w-[150px] md:w-[180px]"
           />
         </div>
-
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8 relative z-10">
           <div
@@ -71,13 +100,13 @@ export default function Navbar() {
                   <div>
                     {link.name === "Projects" ? (
                       <>
-                        {pathname.startsWith("/Projects") ? (
+                        {pathname.startsWith("/projects") ? (
                           <button
                             onClick={() =>
                               setProjectsDropdownOpen(!projectsDropdownOpen)
                             }
                             className={`transition flex items-center gap-1 ${
-                              pathname.startsWith("/Projects")
+                              pathname.startsWith("/projects")
                                 ? "border-b-2 text-[#ED8301]"
                                 : "hover:text-white"
                             }`}
@@ -93,7 +122,7 @@ export default function Navbar() {
                           </button>
                         ) : (
                           <Link
-                            href="/Projects"
+                            href="/projects"
                             className="hover:text-white flex items-center gap-1"
                           >
                             {link.name}
@@ -101,7 +130,7 @@ export default function Navbar() {
                         )}
 
                         {projectsDropdownOpen && (
-                          <div className="absolute top-full left-0 mt-2 w-64 bg-[#111010]/95 backdrop-blur-xl border border-white/10 rounded-lg shadow-lg z-50">
+                          <div className="dropdown-menu absolute top-full left-0 mt-2 w-64 bg-[#111010]/95 backdrop-blur-xl border border-white/10 rounded-lg shadow-lg z-50">
                             {projects.map((project) => (
                               <Link
                                 key={project.href}
@@ -146,7 +175,7 @@ export default function Navbar() {
                         </button>
 
                         {servicesDropdownOpen && (
-                          <div className="absolute top-full left-0 mt-2 w-64 bg-[#111010]/95 backdrop-blur-xl border border-white/10 rounded-lg shadow-lg z-50">
+                          <div className="dropdown-menu absolute top-full left-0 mt-2 w-64 bg-[#111010]/95 backdrop-blur-xl border border-white/10 rounded-lg shadow-lg z-50">
                             {services.map((service) => (
                               <Link
                                 key={service.href}
@@ -209,13 +238,14 @@ export default function Navbar() {
                 background: "linear-gradient(90deg, #FE9A00 0%, #E17100 100%)",
                 borderRadius: "30px",
                 padding: "6px 30px",
+                boxShadow:
+                  "0px 4px 6px -4px #E171004D, 0px 10px 15px -3px #E171004D",
               }}
             >
               Let's Talk
             </button>
           </Link>
         </div>
-
         {/* Mobile Menu Button */}
         <div
           className="md:hidden text-white text-2xl relative z-10 cursor-pointer"
@@ -261,7 +291,7 @@ export default function Navbar() {
                         )}
 
                         {projectsDropdownOpen && (
-                          <div className="mt-2 ml-4 space-y-2">
+                          <div className="dropdown-menu mt-2 ml-4 space-y-2">
                             {projects.map((project) => (
                               <Link
                                 key={project.href}
@@ -304,7 +334,7 @@ export default function Navbar() {
                         </button>
 
                         {servicesDropdownOpen && (
-                          <div className="mt-2 ml-4 space-y-2">
+                          <div className="dropdown-menu mt-2 ml-4 space-y-2">
                             {services.map((service) => (
                               <Link
                                 key={service.href}
@@ -364,6 +394,8 @@ export default function Navbar() {
                     "linear-gradient(90deg, #FE9A00 0%, #E17100 100%)",
                   borderRadius: "30px",
                   padding: "10px 25px",
+                  boxShadow:
+                    "0px 4px 6px -4px #E171004D, 0px 10px 15px -3px #E171004D",
                 }}
               >
                 Let's Talk

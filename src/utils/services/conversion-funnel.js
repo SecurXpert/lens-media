@@ -9,6 +9,9 @@ export const conversionFunnelData = {
   },
   processDescription:
     "We replace guesswork with a conversion-focused optimization framework designed to turn traffic into measurable revenue.",
+  ctaHeading: "CONVERSION & FUNNEL",
+  ctaDescription:
+    "Book a free strategy call and discover how we’ll turn your traffic into qualified leads and paying customers.",
 
   details: [
     "Landing Page Strategy",
@@ -71,29 +74,34 @@ export const conversionFunnelData = {
 
   whatWeOffer: [
     {
+      icon: "FaWindowMaximize",
       title: "Landing Page Strategy",
       description:
         "We design high-converting landing pages based on user psychology, persuasive copy and optimized calls-to-action.",
     },
     {
+      icon: "FaFilter",
       title: "Funnel Design",
       description:
         "Create seamless customer journeys that guide prospects from awareness to purchase.",
     },
     {
+      icon: "FaEnvelope",
       title: "Lead Nurturing Flows",
       description:
-        "Automated email and messaging sequences that educate prospects and build trust until they convert.",
+        "Not every lead converts instantly. We build automated email and messaging sequences that educate prospects, build trust and move them toward a buying decision.",
     },
     {
+      icon: "FaChartLine",
       title: "Conversion Rate Optimization (CRO)",
       description:
-        "Continuous optimization using testing, analytics and behavioral insights to increase conversions without increasing ad spend.",
+        "Through testing, analytics, and user behavior insights, we continuously refine your pages and funnels to increase conversions without increasing ad spend.",
     },
     {
+      icon: "FaRobot",
       title: "Marketing Automation",
       description:
-        "Automated workflows that manage leads, send personalized messages and track campaign performance.",
+        "Streamline your marketing with automated workflows that manage leads, send personalized messages and track performance saving time while scaling your results.",
     },
   ],
 
