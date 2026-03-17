@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import { Montserrat } from "next/font/google";
 import Second from "../components/Second";
 import About from "../components/About";
@@ -43,17 +42,17 @@ export default function HeroSection() {
         <div className="flex justify-center overflow-hidden">
           <div className="flex gap-[15px] sm:gap-[20px] lg:gap-[25px] animate-scroll">
             {[1, 2, 3, 4].map((num, i) => (
-              <Image
+              <img
                 key={`first-${i}`}
                 src={`/img${num}.jpg`}
                 alt={`img${num}`}
                 width={350}
-                height={370}
-                className="h-[300px] sm:h-[420px] md:h-[300px] lg:h-[410px] w-[180px] sm:w-[250px] md:w-[300px] lg:w-[350px] object-cover rounded-xl lg:rounded-2xl flex-shrink-0"
+                height={500}
+                className="w-[250px] sm:w-[300px] lg:w-[350px] h-[400px] sm:h-[450px] lg:h-[500px] object-cover rounded-[30px]"
               />
             ))}
             {[1, 2, 3, 4].map((num, i) => (
-              <Image
+              <img
                 key={`second-${i}`}
                 src={`/img${num}.jpg`}
                 alt={`img${num}`}
@@ -63,7 +62,7 @@ export default function HeroSection() {
               />
             ))}
             {[1, 2, 3, 4].map((num, i) => (
-              <Image
+              <img
                 key={`third-${i}`}
                 src={`/img${num}.jpg`}
                 alt={`img${num}`}

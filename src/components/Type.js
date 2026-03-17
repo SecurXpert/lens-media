@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-
 export default function Type() {
   const items = [
     {
@@ -51,11 +49,10 @@ export default function Type() {
             key={i}
             className={`relative rounded-[25px] lg:rounded-[30px] overflow-hidden group ${item.className}`}
           >
-            <Image
+            <img
               src={item.img}
               alt={item.title}
-              fill
-              className="object-cover group-hover:scale-105 transition duration-500"
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500"
             />
 
             {/* Overlay */}

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({
@@ -13,12 +12,10 @@ export default function Client() {
   return (
     <section className="relative w-full py-20 sm:py-28 lg:py-32 bg-black text-white overflow-hidden min-h-screen">
       {/* Background */}
-      <Image
+      <img
         src="/camera.jpg"
         alt="camera background"
-        fill
-        priority
-        className="object-cover"
+        className="absolute inset-0 w-full h-full object-cover"
       />
 
       {/* Overlay */}
@@ -123,12 +120,12 @@ function TestimonialSlider() {
 
           <div className="flex items-center gap-4 mt-2">
             <div className="w-10 h-10  overflow-hidden flex-shrink-0">
-              <Image
+              <img
                 src="/SVG.png"
                 alt="Testimonial avatar"
                 width={30}
                 height={30}
-                className="object-cover"
+                className="w-full h-full object-cover rounded-full"
               />
             </div>
           </div>

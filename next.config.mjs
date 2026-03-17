@@ -1,9 +1,36 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
-  /* config options here */
-  reactCompiler: true,
+  output: "export", // Enables static export
+
+  trailingSlash: true, // Adds trailing slashes to URLs
+
+  experimental: {
+    dynamicParams: false, // Ensures all slugs are pre-defined
+  },
+
   images: {
-    domains: ["images.unsplash.com"],
+    unoptimized: true, // Required for next/image in static export
+  },
+
+  assetPrefix: "/", // Ensures assets (CSS, JS) use relative paths
+
+  // Custom headers for controlling crawler access
+
+  async headers() {
+    return [
+      {
+        source: "/_next/static/(.*)", // Pattern to match all static files including chunks
+
+        headers: [
+          {
+            key: "X-Robots-Tag",
+
+            value: "index, follow", // Prevent crawling of chunk URLs
+          },
+        ],
+      },
+    ];
   },
 };
 

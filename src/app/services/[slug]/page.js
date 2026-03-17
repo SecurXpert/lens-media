@@ -1,11 +1,7 @@
-"use client";
-
-import { useParams } from "next/navigation";
 import { getServiceData } from "@/utils/services";
 import Link from "next/link";
 import { Montserrat } from "next/font/google";
-import { useState } from "react";
-import Image from "next/image";
+import FAQAccordion from "@/components/FAQAccordion";
 import {
   FaCamera,
   FaVideo,
@@ -29,44 +25,64 @@ import {
   FaChartLine,
 } from "react-icons/fa";
 
-const montserrat = Montserrat({ subsets: ["latin"], weight: ["400"] });
-
-// Icon mapping function
-const getIcon = (iconName) => {
-  const iconMap = {
-    FaCamera,
-    FaVideo,
-    FaRobot,
-    FaShareAlt,
-    FaFigma,
-    FaCogs,
-    FaDesktop,
-    FaGlobe,
-    FaGoogle,
-    FaFacebook,
-    FaSearch,
-    FaUsers,
-    FaRedo,
-    FaHashtag,
-    FaPenFancy,
-    FaUserPlus,
-    FaWindowMaximize,
-    FaFilter,
-    FaEnvelope,
-    FaChartLine,
-  };
-  return iconMap[iconName] || null;
+const iconMap = {
+  FaCamera,
+  FaVideo,
+  FaRobot,
+  FaShareAlt,
+  FaFigma,
+  FaCogs,
+  FaDesktop,
+  FaGlobe,
+  FaGoogle,
+  FaFacebook,
+  FaSearch,
+  FaUsers,
+  FaRedo,
+  FaHashtag,
+  FaPenFancy,
+  FaUserPlus,
+  FaWindowMaximize,
+  FaFilter,
+  FaEnvelope,
+  FaChartLine,
 };
 
-export default function ServiceDetail() {
-  const params = useParams();
-  const slug = params?.slug || "";
-  const service = getServiceData(slug);
-  const [openIndex, setOpenIndex] = useState(null);
+const montserrat = Montserrat({ subsets: ["latin"], weight: ["400"] });
 
-  const toggleFAQ = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+// Generate static params for static export
+export function generateStaticParams() {
+  return [
+    { slug: "performance-marketing" },
+    { slug: "digital-marketing" },
+    { slug: "creative-production" },
+    { slug: "branding-design" },
+    { slug: "conversion-funnel" },
+  ];
+}
+
+const serviceOrder = {
+  "creative-production": "01",
+  "branding-design": "02",
+  "performance-marketing": "03",
+  "digital-marketing": "04",
+  "conversion-funnel": "05",
+};
+
+const serviceNames = {
+  "creative-production": "Creative Production",
+  "branding-design": "Branding Design",
+  "performance-marketing": "Performance Marketing",
+  "digital-marketing": "Digital Marketing",
+  "conversion-funnel": "Conversion & Funnel",
+};
+
+/**
+ * @param {{ params: Promise<{ slug: string }> }} props
+ */
+export default async function ServiceDetail({ params }) {
+  const { slug } = await params;
+  const service = getServiceData(slug);
 
   if (!service) {
     return (
@@ -82,6 +98,18 @@ export default function ServiceDetail() {
       </div>
     );
   }
+
+  const formattedTitle = (() => {
+    if (!service?.title) return null;
+
+    const words = service.title.toUpperCase().split(" ");
+    const midPoint = Math.ceil(words.length / 2);
+
+    return {
+      first: words.slice(0, midPoint).join(" "),
+      second: words.slice(midPoint).join(" "),
+    };
+  })();
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -117,17 +145,7 @@ export default function ServiceDetail() {
           <div className="mb-16">
             <div className="flex items-center gap-4 mb-6">
               <div className="text-md font-bold font-inter text-[#ED8301]">
-                {String(
-                  slug === "creative-production"
-                    ? "01"
-                    : slug === "branding-design"
-                      ? "02"
-                      : slug === "performance-marketing"
-                        ? "03"
-                        : slug === "digital-marketing"
-                          ? "04"
-                          : "05",
-                ).padStart(2, "0")}
+                {serviceOrder[slug] || "01"}
               </div>
               <div
                 className="w-10 h-px"
@@ -140,34 +158,19 @@ export default function ServiceDetail() {
                   border: "1.32px solid #F5A62366",
                 }}
               >
-                {slug === "creative-production"
-                  ? "Creative Production"
-                  : slug === "branding-design"
-                    ? "Branding Design"
-                    : slug === "performance-marketing"
-                      ? "Performance Marketing"
-                      : slug === "digital-marketing"
-                        ? "Digital Marketing"
-                        : "Conversion & Funnel"}
+                {serviceNames[slug] || "Service"}
               </div>
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight font-[Azonix]">
-              {service?.title &&
-                (() => {
-                  const title = service.title.toUpperCase();
-                  const words = title.split(" ");
-                  const midPoint = Math.ceil(words.length / 2);
-                  const firstHalf = words.slice(0, midPoint).join(" ");
-                  const secondHalf = words.slice(midPoint).join(" ");
-
-                  return (
-                    <>
-                      <span className="text-white">{firstHalf} </span>
-                      <span className="text-[#ED8301]">{secondHalf}</span>
-                    </>
-                  );
-                })()}
+              {formattedTitle && (
+                <>
+                  <span className="text-white">{formattedTitle.first} </span>
+                  <span className="text-[#ED8301]">
+                    {formattedTitle.second}
+                  </span>
+                </>
+              )}
             </h1>
             <p
               className={`text-lg sm:text-xl text-gray-400 mb-12 max-w-3xl ${montserrat.className}`}
@@ -244,7 +247,7 @@ export default function ServiceDetail() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               {service.whatWeOffer
                 ? service.whatWeOffer.map((item, index) => {
-                    const Icon = getIcon(item.icon);
+                    const Icon = iconMap[item.icon] || FaCogs;
                     return (
                       <div
                         key={index}
@@ -328,11 +331,11 @@ export default function ServiceDetail() {
                   key={index}
                   className="rounded-2xl overflow-hidden border border-[#1C1C1C] hover:scale-[1.03] transition-transform duration-300"
                 >
-                  <Image
+                  <img
                     src={item.image}
                     alt="work"
-                    width={500}
-                    height={400}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-48 object-cover"
                   />
                 </div>
@@ -440,31 +443,7 @@ export default function ServiceDetail() {
             </div>
 
             {/* FAQ Accordion */}
-            <div className="space-y-4 sm:space-y-6">
-              {service.faq?.map((item, index) => (
-                <div
-                  key={index}
-                  className="border-b border-[#1C1C1C] pb-4 sm:pb-6 cursor-pointer"
-                  onClick={() => toggleFAQ(index)}
-                >
-                  <div className="flex justify-between items-start sm:items-center">
-                    <h3 className="text-sm sm:text-base text-white font-medium pr-4">
-                      {item.question}
-                    </h3>
-
-                    <span className="text-[#ED8301] text-lg sm:text-xl flex-shrink-0">
-                      {openIndex === index ? "−" : "⌄"}
-                    </span>
-                  </div>
-
-                  {openIndex === index && (
-                    <p className="text-xs sm:text-sm text-gray-400 mt-3 sm:mt-4 leading-relaxed max-w-lg">
-                      {item.answer}
-                    </p>
-                  )}
-                </div>
-              ))}
-            </div>
+            <FAQAccordion faqs={service.faq} />
           </div>
         </section>
 

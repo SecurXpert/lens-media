@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["400"] });
@@ -13,11 +12,10 @@ export default function About() {
         <div className="flex flex-col lg:flex-row items-center justify-center [transform-style:preserve-3d]">
           {/* Card 1 - Image */}
           <div className="relative w-full max-w-[320px] sm:max-w-[420px] md:max-w-[650px] lg:w-[700px] h-[240px] sm:h-[300px] md:h-[360px] lg:h-[460px] rounded-[28px] overflow-hidden z-[2] lg:mr-[-150px] mb-10 lg:mb-0 shadow-[25px_15px_60px_rgba(0,0,0,0.5)] transition-transform duration-500 ease-in-out [transform:rotateY(38deg)_rotateX(0deg)]">
-            <Image
+            <img
               src="/about.jpg"
               alt="About"
-              fill
-              className="object-cover scale-x-[-1]"
+              className="absolute inset-0 w-full h-full object-cover"
             />
           </div>
 

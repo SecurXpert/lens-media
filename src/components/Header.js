@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
 import { Syne } from "next/font/google";
 import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 
@@ -80,7 +79,7 @@ export default function Navbar() {
         <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent opacity-30 pointer-events-none rounded-full" />
         {/* Logo */}
         <div className="relative z-10">
-          <Image
+          <img
             src="/logo.png"
             alt="logo"
             width={160}

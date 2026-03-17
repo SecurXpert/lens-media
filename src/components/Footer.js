@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import {
   FiMail,
@@ -34,7 +33,7 @@ export default function Footer() {
         {/* LEFT */}
         <div>
           <div className="flex items-center gap-3 mb-6">
-            <Image src="/logo.png" alt="logo" width={180} height={180} />
+            <img src="/logo.png" alt="logo" width={180} height={180} />
           </div>
 
           <p

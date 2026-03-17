@@ -1,8 +1,6 @@
-"use client";
-
 import React from "react";
 import { getProjectData } from "@/utils/project";
-import { useParams, useRouter } from "next/navigation";
+import Link from "next/link";
 import {
   FaBuilding,
   FaCube,
@@ -14,10 +12,23 @@ import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["400"] });
 
-export default function ProjectDetail() {
-  const params = useParams();
-  const router = useRouter();
-  const slug = params.slug;
+// Generate static params for static export
+export function generateStaticParams() {
+  return [
+    { slug: "veloura" },
+    { slug: "hyndav" },
+    { slug: "manyavar" },
+    { slug: "shoot" },
+    { slug: "pure" },
+    { slug: "aroma" },
+  ];
+}
+
+/**
+ * @param {{ params: Promise<{ slug: string }> }} props
+ */
+export default async function ProjectDetail({ params }) {
+  const { slug } = await params;
   const project = getProjectData(slug);
 
   if (!project) {
@@ -38,18 +49,28 @@ export default function ProjectDetail() {
     );
   }
 
+  const DetailItem = ({ Icon, label, value }) => (
+    <div className="flex items-start gap-3">
+      <Icon className="text-[#FE9A00] text-lg mt-1" />
+      <div>
+        <p className="text-gray-500 text-xs">{label}</p>
+        <p>{value}</p>
+      </div>
+    </div>
+  );
+
   return (
     <section className="bg-black text-white">
       {/* TOP SECTION */}
       <section className="relative py-5 md:py-5 px-5 md:px-10">
         {/* BACK BUTTON */}
         <div className="mb-5 md:mb-10">
-          <button
-            onClick={() => router.push("/projects")}
-            className="w-[100px] h-[40px] text-black font-semibold bg-gradient-to-r from-[#FE9A00] to-[#E17100] flex items-center justify-center shadow-[0px_10px_25px_rgba(254,154,0,0.4)] hover:scale-105 rounded-full font-[Azonix] text-sm"
+          <Link
+            href="/projects"
+            className="inline-block w-[100px] h-[40px] text-black font-semibold bg-gradient-to-r from-[#FE9A00] to-[#E17100] flex items-center justify-center shadow-[0px_10px_25px_rgba(254,154,0,0.4)] hover:scale-105 rounded-full font-[Azonix] text-sm text-center pt-3"
           >
             BACK
-          </button>
+          </Link>
         </div>
 
         {/* VIDEO */}
@@ -61,6 +82,9 @@ export default function ProjectDetail() {
             autoPlay
             muted
             loop
+            playsInline
+            preload="metadata"
+            aria-label="Project preview video"
           />
         </div>
       </section>
@@ -107,7 +131,7 @@ export default function ProjectDetail() {
                 " space-y-3 text-gray-400 text-sm md:text-lg"
               }
             >
-              {project.strategyPoints.map((point, index) => (
+              {project.strategyPoints?.map((point, index) => (
                 <li key={index} className="flex items-start gap-3">
                   <span className="text-[#ED8301]">•</span>
                   {point}
@@ -131,35 +155,38 @@ export default function ProjectDetail() {
 
           <div className={montserrat.className + " space-y-6 text-sm"}>
             {/* CLIENT */}
-            <div className="flex items-start gap-3">
-              <FaBuilding className="text-[#FE9A00] text-lg mt-1" />
-              <div>
-                <p className="text-gray-500 text-xs">CLIENT</p>
-                <p>{project.projectDetails.client}</p>
-              </div>
-            </div>
+            <DetailItem
+              Icon={FaBuilding}
+              label="CLIENT"
+              value={project.projectDetails.client}
+            />
 
             <hr className="border-gray-800" />
 
             {/* SERVICE TYPE */}
-            <div className="flex items-start gap-3">
-              <FaCube className="text-[#FE9A00] text-lg mt-1" />
-              <div>
-                <p className="text-gray-500 text-xs">SERVICE TYPE</p>
-                <p>{project.projectDetails.serviceType}</p>
-              </div>
-            </div>
+            <DetailItem
+              Icon={FaCube}
+              label="SERVICE TYPE"
+              value={project.projectDetails.serviceType}
+            />
 
             <hr className="border-gray-800" />
 
             {/* INDUSTRY */}
-            <div className="flex items-start gap-3">
-              <FaChartLine className="text-[#FE9A00] text-lg mt-1" />
-              <div>
-                <p className="text-gray-500 text-xs">INDUSTRY</p>
-                <p>{project.projectDetails.industry}</p>
-              </div>
-            </div>
+            <DetailItem
+              Icon={FaChartLine}
+              label="INDUSTRY"
+              value={project.projectDetails.industry}
+            />
+
+            <hr className="border-gray-800" />
+
+            {/* DURATION */}
+            <DetailItem
+              Icon={FaClock}
+              label="DURATION"
+              value={project.projectDetails.duration}
+            />
 
             <hr className="border-gray-800" />
 

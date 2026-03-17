@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { FaTag } from "react-icons/fa";
 import { Montserrat } from "next/font/google";
 import Link from "next/link";
@@ -81,13 +80,13 @@ export default function Projects() {
         </div>
 
         {/* RIGHT IMAGE */}
-        <div className="relative flex justify-center mt-16">
-          <Image
-            src="/go1.png"
+        <div className="relative flex justify-center ">
+          <img
+            src="/photographer.png"
             alt="photographer"
             width={400}
-            height={575}
-            className="relative h-[575px] object-contain drop-shadow-2xl"
+            height={600}
+            className="relative h-[600px] object-contain drop-shadow-2xl"
           />
         </div>
       </section>
@@ -99,22 +98,21 @@ export default function Projects() {
           {projects.map((item, index) => (
             <Link href={item.link} key={index}>
               <div
-                className="border border-gray-800 rounded-2xl overflow-hidden transition cursor-pointer hover:scale-[1.02] hover:border-[#FE9A00]/40 hover:shadow-[0_0_25px_rgba(254,154,0,0.15)]"
+                className="border border-gray-800 rounded-2xl overflow-hidden transition cursor-pointer hover:scale-[1.02] hover:border-[#FE9A00]/40 hover:shadow-[0_0_25px_rgba(254,154,0,0.15)] h-96 flex flex-col"
                 style={{
                   background:
                     "linear-gradient(93.66deg, rgba(255,255,255,0.08) 2.21%, rgba(255,255,255,0) 100%)",
                 }}
               >
                 {/* IMAGE */}
-                <div className="relative">
-                  <Image
+                <div className="relative h-64">
+                  <img
                     src={item.image}
                     alt={item.title}
                     width={400}
                     height={250}
-                    className="h-52 w-full object-cover"
+                    className="w-full h-full object-cover"
                   />
-
                   <span className="absolute top-3 left-3 text-xs bg-gray-700 px-3 py-1 rounded-full flex items-center gap-1">
                     <FaTag className="text-[10px]" />
                     {item.tag}
@@ -122,7 +120,7 @@ export default function Projects() {
                 </div>
 
                 {/* CONTENT */}
-                <div className="p-5">
+                <div className="p-5 flex-1">
                   <p className="text-xs text-gray-400 mb-1">{item.company}</p>
 
                   <h3

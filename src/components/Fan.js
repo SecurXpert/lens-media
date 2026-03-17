@@ -30,7 +30,7 @@ export default function Fan() {
                 transform: `translateX(${card.translate}) rotate(${card.rotate})`,
               }}
             >
-              <Image
+              <img
                 src={card.src}
                 alt={`fan${i}`}
                 width={180}
@@ -42,7 +42,7 @@ export default function Fan() {
 
           {/* Mobile Center Card */}
           <div className="sm:hidden">
-            <Image
+            <img
               src="/fan5.png"
               alt="fan5"
               width={200}
