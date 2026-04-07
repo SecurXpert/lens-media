@@ -39,6 +39,7 @@ export default function Navbar() {
     { name: "Projects", href: "/projects", hasDropdown: true },
     { name: "About", href: "/about" },
     { name: "Services", href: "/services", hasDropdown: true },
+    { name: "Blogs", href: "/blogs" },
   ];
 
   const services = [
