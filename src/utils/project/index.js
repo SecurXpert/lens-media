@@ -6,12 +6,12 @@ import { Pure } from "./pure.js";
 import { Aroma } from "./aroma.js";
 
 export const projectData = {
-  veloura: Veloura,
-  hyndav: Hyndav,
-  manyavar: Manyavar,
-  shoot: Shoot,
-  pure: Pure,
-  aroma: Aroma,
+  veloura: { ...Veloura, slug: 'veloura' },
+  hyndav: { ...Hyndav, slug: 'hyndav' },
+  manyavar: { ...Manyavar, slug: 'manyavar' },
+  shoot: { ...Shoot, slug: 'shoot' },
+  pure: { ...Pure, slug: 'pure' },
+  aroma: { ...Aroma, slug: 'aroma' },
 };
 
 export const getProjectData = (slug) => {
