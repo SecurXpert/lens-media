@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import { Montserrat } from "next/font/google";  
+import { Montserrat } from "next/font/google";
+import { useState } from "react";  
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -15,6 +18,9 @@ const blogs = [
     date: "Nov 29, 2024",
     image: "/blogs/blog1/blog1.png",
     link: "/blogs/digital",
+    readTime: "5 min read",
+    category: "MARKETING",
+    views: "1.2K views",
   },
   {
     id: 2,
@@ -23,6 +29,9 @@ const blogs = [
     date: "Nov 29, 2024",
     image: "/blogs/blog2/blog2.jpg",
     link: "/blogs/ai-videos",
+    readTime: "8 min read",
+    category: "AI & VIDEO",
+    views: "856 views",
   },
   {
     id: 3,
@@ -31,6 +40,9 @@ const blogs = [
     date: "Nov 29, 2024",
     image: "/blogs/blog3/blog3.png",
     link: "/blogs/performance",
+    readTime: "6 min read",
+    category: "PERFORMANCE",
+    views: "2.4K views",
   },
   {
     id: 4,
@@ -39,14 +51,20 @@ const blogs = [
     date: "Nov 29, 2024",
     image: "/blogs/blog4/blog4.jpg",
     link: "/blogs/photography",
+    readTime: "7 min read",
+    category: "PHOTOGRAPHY",
+    views: "3.1K views",
   },
   {
     id: 5,
     title: "Social Media Marketing Services for Business Growth",
-    desc: "In 2026, social media is the key to brand success. Discover how strategic content and targeted campaigns can boost engagement, build trust, and drive sales.",
+    desc: "In 2026, social media is key to brand success. Discover how strategic content and targeted campaigns can boost engagement, build trust, and drive sales.",
     date: "Nov 29, 2024",
     image: "/blogs/blog5/blog5.png",
     link: "/blogs/social",
+    readTime: "4 min read",
+    category: "SOCIAL MEDIA",
+    views: "1.8K views",
   },
   {
     id: 6,
@@ -55,10 +73,23 @@ const blogs = [
     date: "Nov 29, 2024",
     image: "/blogs/blog6/blog6.jpg",
     link: "/blogs/product",
+    readTime: "9 min read",
+    category: "VIDEO PRODUCTION",
+    views: "923 views",
   },
 ];
 
+const categories = [
+  "All",
+  "Digital Marketing",
+  "Visual Content",
+  "SEO & Analytics",
+  "Social Media",
+  "Branding",
+];
+
 export default function BlogsPage() {
+  const [active, setActive] = useState("All");
   return (
     <section className="bg-black text-white min-h-screen py-16 px-6">
       {/* Heading */}
