@@ -1,10 +1,10 @@
 export const social = {
   title: "The Art of Visual Storytelling",
   subtitle:
-    "Behind the lens of our most ambitious cinematic journey&mdash;where every frame tells a thousand stories",
-  author: "Marcus Chen",
-  readTime: "12 min read",
-  date: "March 28, 2026",
+    " Discover how social media marketing services help businesses increase brand awareness, generate leads, and drive real growth through strategic campaigns.",
+  author: "Social Media Marketing & Digital Growth",
+  readTime: "8 min read",
+  date: "April 2026",
   heroImage: "/blog bg.png",
 
   sections: [
@@ -14,70 +14,205 @@ export const social = {
     },
     {
       id: "process",
-      title: "PROCESS",
+      title: "The Strategy",
     },
     {
-      id: "behind-the-scenes",
-      title: "BEHIND THE SCENES",
+      id: "What It Actually Looks Like",
+      title: "What It Actually Looks Like",
     },
     {
       id: "results",
-      title: "RESULTS",
+      title: "What Clients Are Achieving",
     },
     {
-      id: "conclusion",
-      title: "CONCLUSION",
+      id: "looking-forward",
+      title: "WHAT'S SHAPING SOCIAL MEDIA MARKETING IN 2026",
     },
   ],
 
-  paragraph1: `In the golden hour of a late summer evening, our crew set out to capture something extraordinary. What began as a simple production evolved into a masterclass in visual storytelling—a journey that would challenge our creative boundaries and redefine what we thought possible.`,
+  paragraph1: `Social media has transformed how businesses connect with their audience. In 2026, platforms like Instagram, Facebook, and LinkedIn are no longer just communication tools — they are powerful marketing engines that drive real business growth.`,
 
-  paragraph2: `This wasn't just another project. It was an exploration of light, shadow, and the spaces between—where stories live and breathe. Every frame meticulously crafted, every moment deliberate, every decision purposeful.`,
+  paragraph2: `Businesses that invest in professional social media marketing services are seeing higher engagement, stronger brand visibility, and consistent lead generation. With the right strategy, social media can turn followers into loyal customers and customers into brand advocates.
+`,
+
+  paragraph3: `Whether you are a local business, startup, or growing brand, social media marketing helps you reach the right audience, build trust, and scale your business faster than traditional marketing methods.
+This guide explains how social media marketing services work and how they can drive measurable business growth.
+`,
 
   image: "/blog img1.png",
+  heading: "FEATURED STORY",
 
-  title: "THE SOCIAL",
+  title: "Social Media Marketing Services for Business Growth",
+
+  paragraph4: `Social Media Marketing That Drives Results`,
 
   section1: {
-    title: "01. PRE-PRODUCTION",
-    description: `Months of meticulous planning preceded the first frame. Location scouting took us across three continents, searching for that perfect interplay of natural light and architectural beauty. We studied the masters—from Storaro to Deakins—extracting principles that would guide our visual language.`,
-
+    title: "01. Content Creation & Branding",
+    description: `High-quality content is the foundation of successful social media marketing.`,
+    description2: `What it includes:`,
+    points: [
+      "Creative posts and graphics",
+      "Short-form videos and reels",
+      "Brand storytelling content",
+      "Consistent visual identity"
+    ],
+    description3: `Why it works: Engaging content attracts attention and builds brand recognition.`,
     image1: "/img1.jpg",
     image2: "/img2.jpg",
+    title2: "Actionable tip: ",
+    description4: `Focus on value + visuals + consistency to stand out.`
   },
 
   section2: {
-    title: "02. PRODUCTION",
-    description: `On set, magic happened in the margins. Between the carefully orchestrated shots, we found moments of spontaneous brilliance. The crew moved like a symphony orchestra, each member attuned to the rhythm of creation, anticipating needs before they arose.`,
-    image: "/img3.jpg",
+    title: "02. Platform-Specific Strategy",
+    description: `Each platform requires a unique approach.`,
+    description2: `What it includes:`,
+    points: [
+      "Instagram Reels and posts",
+      "Facebook ads and community building",
+      "LinkedIn professional content",
+      "YouTube video marketing"
+    ],
+    description3: `Why it works: Different audiences behave differently on each platform.`,
+    title2: "Actionable tip: ",
+    description4: `Don't post the same content everywhere — optimize for each platform.`
+  },
+
+  section3: {
+    title: "03. Paid Advertising Campaigns",
+    description: `Social media ads help businesses scale faster.`,
+    description2: `What it includes:`,
+    points: [
+      "Facebook & Instagram ads",
+      "Lead generation campaigns",
+      "Retargeting strategies",
+      "Conversion-focused creatives"
+    ],
+    description3: `Why it works: Ads bring targeted traffic and faster results.`,
+    title2: "Actionable tip: ",
+    description4: `Start with a small budget and scale winning ads.`
+  },
+
+  section4: {
+    title: "04. Audience Targeting & Engagement",
+    description: `Reaching the right audience is key to success.`,
+    description2: `What it includes:`,
+    points: [
+      "Interest and behavior targeting",
+      "Engagement with comments and messages",
+      "Community building",
+      "Customer interaction"
+    ],
+    description3: `Why it works: Engagement builds trust and relationships.`,
+    title2: "Actionable tip: ",
+    description4: `Reply to every comment and DM to improve conversions.`
+  },
+
+  section5: {
+    title: "05. Analytics & Performance Tracking",
+    description: `Data-driven decisions improve results.`,
+    description2: `What it includes:`,
+    points: [
+      "Engagement metrics",
+      "Reach and impressions",
+      "Conversion tracking",
+      "Campaign performance analysis"
+    ],
+    description3: `Why it works: Helps optimize campaigns for better ROI.`,
+    title2: "Actionable tip: ",
+    description4: `Track weekly performance and adjust strategy accordingly.`
+  },
+
+  section6: {
+    title: "06. Consistency & Growth Strategy",
+    description: `Consistency is the key to long-term success.`,
+    description2: `What it includes:`,
+    points: [
+      "Content calendar planning",
+      "Regular posting schedule",
+      "Trend analysis",
+      "Continuous optimization"
+    ],
+    description3: `Why it works: Consistent brands grow faster and stay visible.`,
+    title2: "Actionable tip: ",
+    description4: `Post at least 4–5 times per week for better reach.`
   },
 
   quote: {
-    text: `"Every frame is a brushstroke in the canvas of time. We're not just capturing images—we're painting with light, shadow, and emotion."`,
-    author: "— MARCUS CHEN, DIRECTOR",
+    text: `“Social media marketing is not about posting content — it’s about building relationships, trust, and long-term brand value.”`,
+    author: " — Digital Marketing Insights Report, 2026",
   },
 
   behindTheScenes: {
-    title: "BEHIND THE SCENES",
-    description: `Step into our creative process. These moments between action and cut reveal the dedication, collaboration, and artistry that breathe life into every scene.`,
+    title: " What It Actually Looks Like",
     images: ["/img1.jpg", "/img2.jpg", "/img3.jpg", "/img4.jpg"],
   },
 
+  section7: {
+    title: "01. Planning",
+    description: `Define your goals — brand awareness, leads, or sales.`,
+  },
+
+  section8: {
+    title: "02. Content Creation",
+    description: `Design posts, videos, and creatives aligned with your brand.`,
+  },
+
+  section9: {
+    title: "03. Campaign Execution",
+    description: `Run organic and paid campaigns across platforms.`,
+  },
+
+  section10: {
+    title: "04. Engagement",
+    description: `Interact with your audience through comments and messages.`,
+  },
+
+  section11: {
+    title: "05. Optimization",
+    description: `Analyze performance and improve continuously.`,
+  },
+
   results: {
-    title: "THE RESULTS",
-    paragraph1: `When the final cut emerged from post-production, we knew we had created something special. The feedback was overwhelming—viewers spoke of being transported, of feeling every emotion we poured into each frame.`,
-    paragraph2: `But beyond accolades and metrics, the true measure of success was in the conversations started, the emotions evoked, the stories that resonated long after the credits rolled.`,
-    image: "/results.jpg",
+    title: " What Businesses Are Experiencing",
+    subtitle: "Businesses using social media marketing services report:",
+    image: "/resultimg.png",
+    points: [
+     "3x higher engagement",
+     "Increased brand visibility",
+     "More leads and conversions",
+     "Stronger customer relationships",
+     "Better ROI from marketing campaigns"
+    ]
   },
 
   finalOutput: {
-    title: "LOOKING FORWARD",
-    paragraph1: `The culmination of our efforts came together in a powerful visual narrative that captured both the precision and raw emotion of the journey. Every frame reflected the dedication poured into the process.`,
-    paragraph2: `From concept to execution, the final output stands as a testament to collaboration, creativity, and the relentless pursuit of storytelling excellence.`,
-    image: "/final.jpg",
+    title: "The Future of Social Media Marketing",
+    image: "/resultimg.png",
+    section1: {
+      title: "AI Content Creation",
+      description: "AI tools are simplifying content creation and automation."
+    },
+    section2: {
+      title: "Short-Form Video Growth",
+      description: "Reels and Shorts will dominate engagement."
+    },
+    section3: {
+      title: "Influencer Marketing Expansion",
+      description: "Brands are collaborating with influencers for reach."
+    },
+    section4: {
+      title: "Personal Branding Importance",
+      description: "People connect more with individuals than brands."
+    }
   },
 
   relatedStoriesTitle: "RELATED STORIES",
+  relatedStoriesPoints: [
+   "Video Production Services for Business Growth",
+   "Corporate Video Production: Build Trust and Authority for Your Brand",
+   "Content Marketing Strategies for Business Growth in 2026"
+  ],
 
   stories: [
     {
@@ -100,11 +235,11 @@ export const social = {
     },
   ],
 
-  subscribeTitle: "STAY IN THE STORY",
+  subscribeTitle: " Grow Your Business with Social Media Marketing",
   subscribeDesc:
-    "Get our latest cinematic insights and behind-the-scenes content delivered to your inbox.",
+    " Build your brand, attract customers, and increase sales with professional social media marketing services tailored to your business goals.",
   placeholder: "Your email address",
-  buttonText: "SUBSCRIBE",
+  buttonText: "SUBSCRIBE NOW",
 
-  footerText: " 2026 Lens & Light Media. All rights reserved.",
+  footerText: "Social Media Marketing Services for Business Growth",
 };

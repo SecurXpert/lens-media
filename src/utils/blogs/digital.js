@@ -1,10 +1,10 @@
 export const digital= {
   title: "The Art of Visual Storytelling",
   subtitle:
-    "Behind the lens of our most ambitious cinematic journey&mdash;where every frame tells a thousand stories",
-  author: "Marcus Chen",
-  readTime: "12 min read",
-  date: "March 28, 2026",
+    "Learn how top digital marketing agencies use SEO, paid ads, and performance marketing to drive real business growth in 2026.",
+  author: "Strategy & GrowthStrategy & Growth",
+  readTime: "7 min read",
+  date: "April 26",
   heroImage: "/blog bg.png",
 
   sections: [
@@ -14,97 +14,190 @@ export const digital= {
     },
     {
       id: "process",
-      title: "PROCESS",
+      title: "The Strategy",
     },
     {
-      id: "behind-the-scenes",
-      title: "BEHIND THE SCENES",
+      id: "What It Actually Looks Like",
+      title: "What It Actually Looks Like",
     },
     {
       id: "results",
-      title: "RESULTS",
+      title: "What Clients Are Achieving",
     },
     {
-      id: "conclusion",
-      title: "CONCLUSION",
+      id: "looking-forward",
+      title: "What's Shaping Digital Marketing in 2026",
     },
   ],
 
-  paragraph1: `In the golden hour of a late summer evening, our crew set out to capture something extraordinary. What began as a simple production evolved into a masterclass in visual storytelling—a journey that would challenge our creative boundaries and redefine what we thought possible.`,
+  paragraph1: `The digital marketing landscape in 2026 looks nothing like it did five years ago. AI-powered targeting, zero-click search results, and shrinking organic reach have forced businesses to rethink their entire approach to growth.`,
 
-  paragraph2: `This wasn't just another project. It was an exploration of light, shadow, and the spaces between—where stories live and breathe. Every frame meticulously crafted, every moment deliberate, every decision purposeful.`,
+  paragraph2: `Simply having an online presence is no longer enough. Brands that are winning today have one thing in common — they're working with agencies that treat marketing as a growth system, not a collection of isolated tactics.`,
 
-  image: "/blog img1.png",
+  paragraph3: `This guide breaks down exactly how performance-focused agencies are building that system in 2026: the research, the strategy, the execution, and the results clients are actually seeing.`,
+  
+  image: "/digitalimg12.jpg",
+  heading: "FEATURED STORY",
 
-  title: "THE DIGITALS",
+  title: "Digital Marketing in 2026 Agency Growth Strategies",
+
+  paragraph4: `How Top Agencies Approach Growth in 2026`,
 
   section1: {
-    title: "01. PRE-PRODUCTION",
-    description: `Months of meticulous planning preceded the first frame. Location scouting took us across three continents, searching for that perfect interplay of natural light and architectural beauty. We studied the masters—from Storaro to Deakins—extracting principles that would guide our visual language.`,
+    title: "01. Market & Audience Research",
+    description: `Every successful campaign starts with understanding people, not platforms. Before writing a single ad or publishing a single post, leading agencies invest heavily in audience research — mapping customer pain points, analyzing competitor gaps, and identifying where target audiences actually spend their attention online In 2026, this process increasingly relies on behavioral data and AI-driven segmentation tools that go far beyond basic demographics. The result is campaigns built around real intent, not assumptions..`,
 
-    image1: "/img1.jpg",
-    image2: "/img2.jpg",
+    image1: "/digitalimg13.jpg",
+    image2: "/digitalimg14.jpg",
   },
 
   section2: {
-    title: "02. PRODUCTION",
-    description: `On set, magic happened in the margins. Between the carefully orchestrated shots, we found moments of spontaneous brilliance. The crew moved like a symphony orchestra, each member attuned to the rhythm of creation, anticipating needs before they arose.`,
-    image: "/img3.jpg",
+    title: "02. SEO Strategy & Website Optimization",
+    description: `Search engine optimization remains one of the most valuable long-term investments a business can make — but the rules have changed significantly. With Google's AI Overviews now dominating top results, agencies are shifting focus toward content that earns featured placements, builds topical authority, and answers nuanced questions competitors ignore.
+Technical performance matters just as much as content. Page speed, Core Web Vitals, and mobile experience directly influence both rankings and conversion rates.
+`,
   },
 
+  section3: {
+    title: "03. Paid Advertising Strategy",
+    description: `Paid search and social advertising deliver results fast — but only when campaigns are built with precision. Effective agencies in 2026 use a layered approach: broad awareness campaigns at the top of the funnel, retargeting for warm audiences in the middle, and high-intent conversion campaigns at the bottom.
+Smart bidding strategies powered by machine learning have made manual bid management largely obsolete. The competitive edge now lies in creative quality, audience segmentation, and offer clarity.`,
+  },
+
+   section4: {
+    title: "04. Content Marketing Strategy",
+    description: `Content is still the foundation of trust — but volume without strategy is wasted effort. The most effective agencies focus on fewer, deeper pieces of content that genuinely serve their clients' audiences: long-form guides, original research, video walkthroughs, and expert interviews.
+A well-executed content strategy compounds over time. A single high-authority article can generate leads for years without additional ad spend.
+`,
+  },
+
+   section5: {
+    title: "05. Social Media Marketing",
+    description: `Social platforms in 2026 reward consistency and authenticity over production polish. Short-form video continues to dominate across Instagram Reels, TikTok, and YouTube Shorts — and agencies that build organic content engines alongside paid campaigns are seeing significantly better overall results.
+Community engagement — responding to comments, DMs, and user-generated content — has become a measurable driver of brand trust and purchase intent.`,
+  },
+
+   section6: {
+    title: "06. Performance Marketing & Analytics",
+    description: `None of the above matters without measurement. Agencies track performance across the full customer journey — from first touchpoint to closed sale — using unified dashboards that connect ad platforms, CRM data, and website analytics.
+Campaigns are reviewed weekly, not monthly. The budget is shifted toward what's working, and underperforming assets are replaced through continuous A/B testing. This cycle of iteration is what separates agencies that deliver results from those that deliver reports.`,
+  },
+
+
   quote: {
-    text: `"Every frame is a brushstroke in the canvas of time. We're not just capturing images—we're painting with light, shadow, and emotion."`,
+    text: `The biggest mistake brands make is treating their marketing channels as separate departments. In 2026, the agencies seeing 3X to 5X growth for their clients are the ones running fully integrated systems — where SEO, paid, content, and social all feed each other.`,
     author: "— MARCUS CHEN, DIRECTOR",
   },
 
   behindTheScenes: {
-    title: "BEHIND THE SCENES",
-    description: `Step into our creative process. These moments between action and cut reveal the dedication, collaboration, and artistry that breathe life into every scene.`,
-    images: ["/img1.jpg", "/img2.jpg", "/img3.jpg", "/img4.jpg"],
+    title: "What It Actually Looks Like",
+    description: `Great strategy means nothing without disciplined execution. Here is exactly how a performance-focused digital marketing agency brings campaigns to life`,
+    images: ["/digitalimg17.jpg", "/digitalimg15.jpg", "/digitalimg18.jpg", "/digitalimg16.jpg"],
+  },
+  // What It Actually Looks Like points
+
+  section7: {
+    title: "01. Creative Development",
+    description: `Ad copy, landing pages, and visuals are built as one unified system — not in isolation. Every element speaks the same message across every customer touchpoint, reducing confusion and increasing conversions.
+`,
   },
 
-  results: {
-    title: "THE RESULTS",
-    paragraph1: `When the final cut emerged from post-production, we knew we had created something special. The feedback was overwhelming—viewers spoke of being transported, of feeling every emotion we poured into each frame.`,
-    paragraph2: `But beyond accolades and metrics, the true measure of success was in the conversations started, the emotions evoked, the stories that resonated long after the credits rolled.`,
-    image: "/results.jpg",
+
+  section8: {
+    title: "02. Campaign Architecture",
+    description: ` Campaigns are built around the full buyer journey — awareness at the top, consideration in the middle, and high-intent conversion at the bottom. No audience stage is left unaddressed.
+`,
   },
+
+  section9: {
+    title: "03. Continuous A/B Testing",
+    description: `Every headline, offer, visual, and CTA is tested against a variation. Winners are scaled immediately. Losers are cut within 72 hours. This rapid testing cycle continuously improves campaign performance week over week.`,
+  },
+
+  section10: {
+    title: "04. Budget Allocation",
+    description: `Budget is never locked in at the start of a month. Top agencies shift spend in real time — moving money toward what is delivering the lowest cost-per-acquisition and pulling back from what is not performing.`,
+  },
+
+  section11: {
+    title: "05. Weekly Performance Reviews",
+    description: ` Every client receives a weekly performance report that connects marketing activity directly to business outcomes — leads generated, revenue influenced, cost per result, and next week's action plan.
+`,
+  },
+  
+results: {
+    title: "What Clients Are Achieving",
+    subtitle: "Businesses working with a best digital marketing agency achieve:",
+     image: "/digitalimg19.jpg",
+     points: [
+      "2X to 5X increase in leads",
+      "Significant website traffic growth",
+      "Higher sales and conversions",
+      "Better audience targeting",
+      "A top digital marketing agency ensures measurable and scalable results"
+     ]
+     
+  },
+    paragraph1: "Businesses working with a best digital marketing agency achieve:",
+   
 
   finalOutput: {
-    title: "LOOKING FORWARD",
-    paragraph1: `The culmination of our efforts came together in a powerful visual narrative that captured both the precision and raw emotion of the journey. Every frame reflected the dedication poured into the process.`,
-    paragraph2: `From concept to execution, the final output stands as a testament to collaboration, creativity, and the relentless pursuit of storytelling excellence.`,
-    image: "/final.jpg",
+    title: "What's Shaping Digital Marketing in 2026",
+    paragraph1: ` Three forces are reshaping how agencies deliver results right now:`,
+    image: "/digitalimg26.jpg",
+     image2: "/digitalimg25.jpg",
+    section1: {
+      title: "AI-Powered Personalization",
+      description: "Machine learning now allows campaigns to adapt messaging dynamically based on user behavior, device, time of day, and purchase history. Brands using AI personalization are seeing conversion rate improvements of 20–40% over static campaigns."
+    },
+    section2: {
+      title: "First-Party Data Strategy",
+      description: "With third-party cookies largely gone, agencies are helping clients build owned data assets — email lists, SMS subscribers, loyalty programs — that allow direct, consent-based marketing at scale."
+    },
+    section3: {
+      title: "Search Evolution",
+      description: "Zero-click results, AI Overviews, and conversational search are changing what \"ranking on Google\" means. Agencies investing in brand authority and multi-platform presence are insulating their clients from algorithm volatility."
+    },
+    section4: {
+      title: "Structural Advantage",
+      description: "Businesses that adapt now — before these shifts become the baseline — will have a structural advantage over competitors who wait."
+    }
   },
 
   relatedStoriesTitle: "RELATED STORIES",
+  relatedStoriesPoints: [
+    "SEO Strategies That Drive Organic Traffic",
+    "Performance Marketing Tips for Higher ROI",
+    "Social Media Trends in 2026"
+  ],
 
   stories: [
     {
       id: 1,
       category: "DOCUMENTARY",
       title: "CHASING LIGHT ACROSS CONTINENTS",
-      image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+      image: "/relatedimg1.jpg",
     },
     {
       id: 2,
       category: "PRODUCTION",
       title: "THE SOUND OF SILENCE IN FILM",
-      image: "https://images.unsplash.com/photo-1492724441997-5dc865305da7",
+      image: "/relatedimg2.jpg",
     },
     {
       id: 3,
       category: "INTERVIEW",
       title: "CONVERSATIONS WITH MASTER CINEMATOGRAPHERS",
-      image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+      image: "/relatedimg3.jpg",
     },
   ],
 
-  subscribeTitle: "STAY IN THE STORY",
+  subscribeTitle: "Stay Ahead in Digital Marketing",
   subscribeDesc:
-    "Get our latest cinematic insights and behind-the-scenes content delivered to your inbox.",
+    "Join thousands of marketers getting weekly SEO tips, paid ad strategies, and digital marketing insights — straight from industry experts.",
   placeholder: "Your email address",
-  buttonText: "SUBSCRIBE",
+  buttonText: "SUBSCRIBE NOW",
 
-  footerText: " 2026 Lens & Light Media. All rights reserved.",
+  footerText: "Digital Marketing in 2026: Agency Growth Strategies Guide",
 };
+
